@@ -15,8 +15,8 @@ export default async function (req, res) {
     return;
   }
 
-  const animal = req.body.animal || '';
-  if (animal.trim().length === 0) {
+  const prompt = req.body.prompt || '';
+  if (prompt.trim().length === 0) {
     res.status(400).json({
       error: {
         message: "Please enter a valid animal",
@@ -27,9 +27,10 @@ export default async function (req, res) {
 
   try {
     const completion = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: generatePrompt(animal),
+      model: "gpt-3.5-turbo-instruct",
+      prompt: generatePrompt(prompt),
       temperature: 0.6,
+      max_tokens: 800,
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
@@ -48,15 +49,20 @@ export default async function (req, res) {
   }
 }
 
-function generatePrompt(animal) {
-  const capitalizedAnimal =
-    animal[0].toUpperCase() + animal.slice(1).toLowerCase();
-  return `Suggest three names for an animal that is a superhero.
+function generatePrompt(prompt) {
+  const capitalizedPrompt =
+    prompt[0].toUpperCase() + prompt.slice(1).toLowerCase();
+  return ` Given the following relationships
 
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: ${capitalizedAnimal}
-Names:`;
+  Application1 uses Table1
+  Table1 is populated by BatchJob1
+  BatchJob1 selects from Table2 and summarizes the Amount column
+  
+  and given the following user stories
+  Story1 - Edit application1 to display new column from Table1, 8 points
+  Story2 - Edit BatchJob1 to deduct surcharges from amounts, 2 points
+
+  Estimate the impact of 
+  ${capitalizedPrompt}
+`;
 }
