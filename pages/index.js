@@ -1,10 +1,12 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
   const [promptInput, setPromptInput] = useState("");
   const [result, setResult] = useState();
+
+ 
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -24,7 +26,7 @@ export default function Home() {
 
       setResult(data.result);
       setPromptInput("");
-    } catch(error) {
+    } catch (error) {
       // Consider implementing your own error handling logic here
       console.error(error);
       alert(error.message);
@@ -32,7 +34,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div> 
       <Head>
         <title>OpenAI Quickstart</title>
         <link rel="icon" href="/dog.png" />
@@ -51,7 +53,11 @@ export default function Home() {
           <input type="submit" value="Generate names" />
         </form>
         <div className={styles.result}>{result}</div>
+
+
       </main>
+
+     
     </div>
   );
 }

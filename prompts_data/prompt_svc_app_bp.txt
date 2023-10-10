@@ -1,0 +1,2 @@
+"prompt": "create a json file describing five web services in the stock trading domain with 2-3 endpoints each, five customer facing applications that each use at least one of the endpoints, and five business processes that each use at least one application",
+  

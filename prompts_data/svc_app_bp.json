@@ -1,0 +1,119 @@
+{
+  "prompt": "create a json file describing five web services in the stock trading domain with 2-3 endpoints each, five customer facing applications that each use at least one of the endpoints, and five business processes that each use at least one application",
+  "web_services": [
+    {
+      "name": "StockQuoteService",
+      "endpoints": [
+        {
+          "name": "getQuote",
+          "url": "/quote/:symbol",
+          "description": "Get stock quote by symbol"
+        },
+        {
+          "name": "getHistoricalData",
+          "url": "/historical/:symbol",
+          "description": "Get historical stock data by symbol"
+        }
+      ]
+    },
+    {
+      "name": "OrderExecutionService",
+      "endpoints": [
+        {
+          "name": "placeOrder",
+          "url": "/order/place",
+          "description": "Place a stock trading order"
+        },
+        {
+          "name": "cancelOrder",
+          "url": "/order/cancel/:id",
+          "description": "Cancel a stock trading order by ID"
+        }
+      ]
+    },
+    {
+      "name": "PortfolioService",
+      "endpoints": [
+        {
+          "name": "getPortfolio",
+          "url": "/portfolio",
+          "description": "Get user's stock portfolio"
+        },
+        {
+          "name": "updatePortfolio",
+          "url": "/portfolio/update",
+          "description": "Update user's stock portfolio"
+        }
+      ]
+    },
+    {
+      "name": "AlertService",
+      "endpoints": [
+        {
+          "name": "setPriceAlert",
+          "url": "/alert/set",
+          "description": "Set a price alert for a stock"
+        }
+      ]
+    },
+    {
+      "name": "NewsService",
+      "endpoints": [
+        {
+          "name": "getNews",
+          "url": "/news",
+          "description": "Get the latest stock market news"
+        }
+      ]
+    }
+  ],
+  "customer_facing_applications": [
+    {
+      "name": "TradingApp",
+      "endpoints_used": ["StockQuoteService.getQuote", "OrderExecutionService.placeOrder"]
+    },
+    {
+      "name": "PortfolioManagementApp",
+      "endpoints_used": ["PortfolioService.getPortfolio", "PortfolioService.updatePortfolio"]
+    },
+    {
+      "name": "AlertingApp",
+      "endpoints_used": ["AlertService.setPriceAlert"]
+    },
+    {
+      "name": "NewsApp",
+      "endpoints_used": ["NewsService.getNews"]
+    },
+    {
+      "name": "AnalyticsApp",
+      "endpoints_used": ["StockQuoteService.getHistoricalData"]
+    }
+  ],
+  "business_processes": [
+    {
+      "name": "StockTrading",
+      "description": "Process of buying and selling stocks",
+      "applications_used": ["TradingApp"]
+    },
+    {
+      "name": "AlertManagement",
+      "description": "Managing price alerts for stocks",
+      "applications_used": ["AlertingApp"]
+    },
+    {
+      "name": "PortfolioTracking",
+      "description": "Tracking and managing stock portfolios",
+      "applications_used": ["PortfolioManagementApp"]
+    },
+    {
+      "name": "NewsMonitoring",
+      "description": "Monitoring and receiving news updates",
+      "applications_used": ["NewsApp"]
+    },
+    {
+      "name": "MarketAnalysis",
+      "description": "Analyzing historical stock data and trends",
+      "applications_used": ["AnalyticsApp"]
+    }
+  ]
+}

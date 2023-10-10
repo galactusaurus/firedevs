@@ -1,4 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
+import epicData from '../../prompts_data/epics_stories.json';
+import appData from '../../prompts_data/svc_app_bp.json';
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -19,7 +21,7 @@ export default async function (req, res) {
   if (prompt.trim().length === 0) {
     res.status(400).json({
       error: {
-        message: "Please enter a valid animal",
+        message: "Please enter a valid question",
       }
     });
     return;
@@ -52,17 +54,16 @@ export default async function (req, res) {
 function generatePrompt(prompt) {
   const capitalizedPrompt =
     prompt[0].toUpperCase() + prompt.slice(1).toLowerCase();
-  return ` Given the following relationships
-
-  Application1 uses Table1
-  Table1 is populated by BatchJob1
-  BatchJob1 selects from Table2 and summarizes the Amount column
   
-  and given the following user stories
-  Story1 - Edit application1 to display new column from Table1, 8 points
-  Story2 - Edit BatchJob1 to deduct surcharges from amounts, 2 points
+   
+    let prompt2 = ` Given the following relationships
+    ${JSON.stringify(appData)}
+    
+    and given the following epic data
+    ${JSON.stringify(epicData)}
 
-  Estimate the impact of 
-  ${capitalizedPrompt}
-`;
+    ${capitalizedPrompt}
+  `;
+    console.log(prompt2);
+    return prompt2;
 }

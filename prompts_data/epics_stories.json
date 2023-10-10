@@ -1,0 +1,159 @@
+{
+  "epics": [
+    {
+      "id": 1,
+      "title": "Trading Process Optimization",
+      "description": "Optimize the trading process for users.",
+      "applications": {
+        "TradingApp": {
+          "user_stories": [
+            {
+              "id": 1,
+              "title": "Implement real-time stock price updates.",
+              "hours_spent": 40
+            }
+          ]
+        },
+        "PortfolioManagementApp": {
+          "user_stories": [
+            {
+              "id": 2,
+              "title": "Integrate advanced order types.",
+              "hours_spent": 45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Alerting System Enhancement",
+      "description": "Enhance the alerting system to provide more valuable alerts.",
+      "applications": {
+        "AlertingApp": {
+          "user_stories": [
+            {
+              "id": 3,
+              "title": "Implement custom alert conditions.",
+              "hours_spent": 30
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "News and Analysis Hub Expansion",
+      "description": "Expand the news and analysis hub to offer more valuable insights to users.",
+      "applications": {
+        "NewsApp": {
+          "user_stories": [
+            {
+              "id": 4,
+              "title": "Curate personalized news feeds for users.",
+              "hours_spent": 40
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Advanced Analytics Tools Development",
+      "description": "Develop advanced analytics tools to empower traders and investors.",
+      "applications": {
+        "AnalyticsApp": {
+          "user_stories": [
+            {
+              "id": 5,
+              "title": "Implement AI-powered predictive analytics.",
+              "hours_spent": 50
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "tech_debt_epics": [
+    {
+      "id": 6,
+      "title": "TradingApp Tech Debt",
+      "description": "Address technical debt in the TradingApp.",
+      "applications": {
+        "TradingApp": {
+          "user_stories": [
+            {
+              "id": 6,
+              "title": "Refactor legacy code for improved performance.",
+              "hours_spent": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "PortfolioManagementApp Tech Debt",
+      "description": "Address technical debt in the PortfolioManagementApp.",
+      "applications": {
+        "PortfolioManagementApp": {
+          "user_stories": [
+            {
+              "id": 7,
+              "title": "Update third-party dependencies to latest versions.",
+              "hours_spent": 15
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "AlertingApp Tech Debt",
+      "description": "Address technical debt in the AlertingApp.",
+      "applications": {
+        "AlertingApp": {
+          "user_stories": [
+            {
+              "id": 8,
+              "title": "Optimize database queries for better performance.",
+              "hours_spent": 25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "NewsApp Tech Debt",
+      "description": "Address technical debt in the NewsApp.",
+      "applications": {
+        "NewsApp": {
+          "user_stories": [
+            {
+              "id": 9,
+              "title": "Upgrade front-end libraries for improved user experience.",
+              "hours_spent": 20
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "AnalyticsApp Tech Debt",
+      "description": "Address technical debt in the AnalyticsApp.",
+      "applications": {
+        "AnalyticsApp": {
+          "user_stories": [
+            {
+              "id": 10,
+              "title": "Refactor data processing code for better scalability.",
+              "hours_spent": 30
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
