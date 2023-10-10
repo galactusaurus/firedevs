@@ -63,6 +63,14 @@ function generatePrompt(prompt) {
     ${JSON.stringify(epicData)}
 
     ${capitalizedPrompt}
+    
+    also suggest some follow-on questions in a list
+
+    return the result in html format, put the follow on questions 
+    in a div with an ID of followOns with a
+    header object that says Potential Follow Ons.
+
+    attach a json file containing the applications
   `;
     console.log(prompt2);
     return prompt2;

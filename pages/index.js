@@ -1,12 +1,15 @@
 import Head from "next/head";
 import { useCallback, useState } from "react";
 import styles from "./index.module.css";
+import parse from "html-react-parser";
 
 export default function Home() {
   const [promptInput, setPromptInput] = useState("");
   const [result, setResult] = useState();
 
- 
+  function parseResult(result){
+    return parse(result);
+  }
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -24,7 +27,7 @@ export default function Home() {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
-      setResult(data.result);
+      setResult(parseResult(data.result));
       setPromptInput("");
     } catch (error) {
       // Consider implementing your own error handling logic here
