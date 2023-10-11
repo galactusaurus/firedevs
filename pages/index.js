@@ -5,15 +5,18 @@ import parse from "html-react-parser";
 
 export default function Home() {
   const [promptInput, setPromptInput] = useState("");
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(" ");
+  const [runningResult, setRunningResult] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  function parseResult(result){
+  function parseResult(result) {
     return parse(result);
   }
 
   async function onSubmit(event) {
     event.preventDefault();
     try {
+      setLoading(true);
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
@@ -27,40 +30,79 @@ export default function Home() {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
-      setResult(parseResult(data.result));
+      var thisArray = runningResult.slice();
+      thisArray.push("<div class='question'>" + promptInput + "</div>");
+      setRunningResult(thisArray);
+      thisArray.push(data.result);
+      setRunningResult(thisArray);
+
       setPromptInput("");
+      setLoading(false);
     } catch (error) {
       // Consider implementing your own error handling logic here
       console.error(error);
       alert(error.message);
+      setLoading(false);
     }
   }
 
+  function resultBuilder() {
+    return runningResult.map((item, index) => {
+      return (<div id={index}>{parseResult(item)}</div>);
+    })
+
+  }
+
   return (
-    <div> 
+    <div>
       <Head>
         <title>OpenAI Quickstart</title>
         <link rel="icon" href="/dog.png" />
       </Head>
 
+
       <main className={styles.main}>
-        <h3>Ask me a question</h3>
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="prompt"
-            placeholder=""
-            value={promptInput}
-            onChange={(e) => setPromptInput(e.target.value)}
-          />
-          <input type="submit" value="Generate names" />
-        </form>
-        <div className={styles.result}>{result}</div>
+        <div className={styles.header}>
+          <h1>K. R. A. A. N. G.</h1>
+        </div>
+        <div className={styles.inputBox}>
+          <form onSubmit={onSubmit}>
+
+            <div className={styles.promptBox}>
+              <input
+                type="text"
+                name="prompt"
+                placeholder="query kraang"
+                value={promptInput}
+                onChange={(e) => setPromptInput(e.target.value)}
+              />
+            </div>
+            <div className={styles.promptButton}>
+              <input type="submit" value="Generate" />
+            </div>
+
+          </form>
+        </div>
+
+        <div className={styles.krangConsole}>
+          <div className={styles.result}>{resultBuilder()}</div>
+          {loading ?
+            (<div className={styles.ldsdualring}></div>)
+            :
+            (<div></div>)
+          }
+        </div>
+
+
+
+
+
+
 
 
       </main>
 
-     
+
     </div>
   );
 }

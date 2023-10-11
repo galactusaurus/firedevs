@@ -1,6 +1,5 @@
 {
-  "prompt": "create a json file describing five web services in the stock trading domain with 2-3 endpoints each, five customer facing applications that each use at least one of the endpoints, and five business processes that each use at least one application",
-  "web_services": [
+ "web_services": [
     {
       "name": "StockQuoteService",
       "endpoints": [
@@ -70,22 +69,27 @@
   "customer_facing_applications": [
     {
       "name": "TradingApp",
+      "services_used": ["StockQuoteService","OrderExecutionService"],
       "endpoints_used": ["StockQuoteService.getQuote", "OrderExecutionService.placeOrder"]
     },
     {
       "name": "PortfolioManagementApp",
+      "services_used": ["PortfolioService"],
       "endpoints_used": ["PortfolioService.getPortfolio", "PortfolioService.updatePortfolio"]
     },
     {
       "name": "AlertingApp",
+      "services_used": ["AlertService"],
       "endpoints_used": ["AlertService.setPriceAlert"]
     },
     {
       "name": "NewsApp",
+      "services_used": ["NewsService"],
       "endpoints_used": ["NewsService.getNews"]
     },
     {
       "name": "AnalyticsApp",
+      "services_used": ["StockQuoteService"],
       "endpoints_used": ["StockQuoteService.getHistoricalData"]
     }
   ],

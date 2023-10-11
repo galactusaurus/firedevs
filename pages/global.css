@@ -1,0 +1,17 @@
+body {
+    background-color: #333; /* Dark background color */
+    color: #00FF00; /* Green text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .answer{
+    color:white;
+    width:80%;
+  }
+
+  .question{
+    color: pink;
+    width:80%;
+  }

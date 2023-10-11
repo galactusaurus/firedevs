@@ -1,68 +1,118 @@
 @font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
-      format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
+  font-family: tmnt;
+  src: url(../font/Turtles.otf);
 }
-@font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
+
+.header{
+  float: left;
+  width: 100%;
+  background-color: #222;
+  margin: 0px;
+  padding: 0px;
 }
-.main,
-.main input {
-  font-size: 16px;
-  line-height: 24px;
-  color: #353740;
-  font-family: "ColfaxAI", Helvetica, sans-serif;
+
+.main{
+
+  /* Dark background color */
+  color: #00FF00;
+  /* Green text color */
+  font-family: Arial, Helvetica, sans-serif;
+ 
 }
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
+.main input{
+  background-color: #333;
+  /* Dark background color */
+  color: #00FF00;
+
 }
-.main .icon {
-  width: 34px;
+.main h1 {
+  width: 100%;
+  background-color: #222; /* Dark header background color */
+  text-align: left;
+  /* Dark background color */
+  color: #00FF00;
+  /* Green text color */
+  font-family: tmnt;
+  font-size: 40px;
+  margin:0px;
+  padding: 0px;
 }
-.main h3 {
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: bold;
-  color: #202123;
-  margin: 16px 0 40px;
+ 
+.promptButton{
+  float: left;
+  width:14%;
 }
-.main form {
-  display: flex;
-  flex-direction: column;
-  width: 320px;
+ 
+.promptBox{
+  float: left;
+  width: 85%;
 }
-.main input[type="text"] {
-  padding: 12px 16px;
-  border: 1px solid #10a37f;
-  border-radius: 4px;
-  margin-bottom: 24px;
-  outline-color: #10a37f;
+
+.promptBox
+input[type="text"] {
+  background-color: #444; /* Dark input background color */
+  color: #00FF00; /* Green text color for input */
+  border: 1px solid #00FF00; /* Green border for input */
+  padding: 10px;
+  width: 98%;
+  border-radius: 5px;
 }
-.main ::placeholder {
-  color: #8e8ea0;
-  opacity: 1;
+
+.inputBox{
+  width:100%;
 }
-.main input[type="submit"] {
-  padding: 12px 0;
-  color: #fff;
-  background-color: #10a37f;
-  border: none;
-  border-radius: 4px;
-  text-align: center;
-  cursor: pointer;
+
+.promptButton
+input{
+  color: #00FF00; /* Green text color for input */
+  border: 1px solid #00FF00; /* Green border for input */
+  padding: 10px;
+  width: 98%;
+  border-radius: 5px;
+ 
 }
-.main .result {
-  font-weight: bold;
-  margin-top: 40px;
+
+.result {
+  width: 100%;
+  float: left;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+}
+
+
+
+.ldsdualring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.ldsdualring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.krangConsole{
+  width:60%;
+  background-color: #444;
+  height:800px;
+  float: left;
+  border-radius: 5px;
+  border-color: #00FF00;
+  margin-top:12px;
+  margin-left:8px;
+  overflow:auto;
 }
 
