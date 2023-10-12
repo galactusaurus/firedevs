@@ -11,8 +11,8 @@ export default function Home() {
 
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <title>K.R.A.A.A.N.G. - Your Robotic Agile Consultant</title>
+        <link rel="icon" href="/krang2.png" />
       </Head>
       <div>
         <img className={styles.krangimg} src="/krang2.png" />
@@ -26,8 +26,6 @@ export default function Home() {
           {kraaangconsole()}
         </div>
       </main>
-
-
     </div>
   );
 }
