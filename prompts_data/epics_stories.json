@@ -1,159 +1,186 @@
 {
-  "epics": [
+  "user_stories": [
     {
-      "id": 1,
-      "title": "Trading Process Optimization",
-      "description": "Optimize the trading process for users.",
-      "applications": {
-        "TradingApp": {
-          "user_stories": [
-            {
-              "id": 1,
-              "title": "Implement real-time stock price updates.",
-              "hours_spent": 40
-            }
-          ]
-        },
-        "PortfolioManagementApp": {
-          "user_stories": [
-            {
-              "id": 2,
-              "title": "Integrate advanced order types.",
-              "hours_spent": 45
-            }
-          ]
-        }
-      }
+      "story_id": 1,
+      "description": "As a user, I want to view real-time stock quotes on the Stock Trading Mobile App.",
+      "state": "Not Started",
+      "time_estimate": "3 days"
     },
     {
-      "id": 2,
-      "title": "Alerting System Enhancement",
-      "description": "Enhance the alerting system to provide more valuable alerts.",
-      "applications": {
-        "AlertingApp": {
-          "user_stories": [
-            {
-              "id": 3,
-              "title": "Implement custom alert conditions.",
-              "hours_spent": 30
-            }
-          ]
-        }
-      }
+      "story_id": 2,
+      "description": "As a trader, I want to execute market orders on the Online Stock Trading Platform.",
+      "state": "In Progress",
+      "time_estimate": "5 days"
     },
     {
-      "id": 3,
-      "title": "News and Analysis Hub Expansion",
-      "description": "Expand the news and analysis hub to offer more valuable insights to users.",
-      "applications": {
-        "NewsApp": {
-          "user_stories": [
-            {
-              "id": 4,
-              "title": "Curate personalized news feeds for users.",
-              "hours_spent": 40
-            }
-          ]
-        }
-      }
+      "story_id": 3,
+      "description": "As an investor, I want to see a breakdown of my portfolio by asset class on the Portfolio Dashboard Web App.",
+      "state": "Completed",
+      "time_estimate": "2 days"
     },
     {
-      "id": 4,
-      "title": "Advanced Analytics Tools Development",
-      "description": "Develop advanced analytics tools to empower traders and investors.",
-      "applications": {
-        "AnalyticsApp": {
-          "user_stories": [
-            {
-              "id": 5,
-              "title": "Implement AI-powered predictive analytics.",
-              "hours_spent": 50
-            }
-          ]
-        }
-      }
+      "story_id": 4,
+      "description": "As a user, I want to receive push notifications for significant stock news on the Stock News Aggregator App.",
+      "state": "In Progress",
+      "time_estimate": "4 days"
+    },
+    {
+      "story_id": 5,
+      "description": "As a trader, I want to set price alerts for specific stocks on the Stock Trading Mobile App.",
+      "state": "Not Started",
+      "time_estimate": "3 days"
+    },
+    {
+      "story_id": 6,
+      "description": "As a user, I want to securely log in using two-factor authentication on the User Account Management App.",
+      "state": "Completed",
+      "time_estimate": "2 days"
+    },
+    {
+      "story_id": 7,
+      "description": "As a trader, I want to customize my trading interface on the Online Stock Trading Platform.",
+      "state": "In Progress",
+      "time_estimate": "6 days"
+    },
+    {
+      "story_id": 8,
+      "description": "As a user, I want to search for specific news articles on the Stock News Aggregator App.",
+      "state": "Not Started",
+      "time_estimate": "4 days"
+    },
+    {
+      "story_id": 9,
+      "description": "As an administrator, I want to monitor user access logs on the User Account Management App.",
+      "state": "Not Started",
+      "time_estimate": "5 days"
+    },
+    {
+      "story_id": 10,
+      "description": "As a trader, I want to see real-time stock quotes in multiple currencies on the Stock Trading Mobile App.",
+      "state": "In Progress",
+      "time_estimate": "7 days"
+    },
+    {
+      "story_id": 11,
+      "description": "As a user, I want to access trading data offline on the Stock Trading Mobile App.",
+      "state": "Not Started",
+      "time_estimate": "6 days"
+    },
+    {
+      "story_id": 12,
+      "description": "As a trader, I want to set up automated trading strategies on the Online Stock Trading Platform.",
+      "state": "Not Started",
+      "time_estimate": "10 days"
+    },
+    {
+      "story_id": 13,
+      "description": "As a user, I want to share stock news on social media via the Stock News Aggregator App.",
+      "state": "In Progress",
+      "time_estimate": "4 days"
+    },
+    {
+      "story_id": 14,
+      "description": "As an investor, I want to calculate the tax implications of my stock trades on the Portfolio Dashboard Web App.",
+      "state": "Not Started",
+      "time_estimate": "8 days"
+    },
+    {
+      "story_id": 15,
+      "description": "As a trader, I want to create watchlists of stocks on the Online Stock Trading Platform.",
+      "state": "Not Started",
+      "time_estimate": "3 days"
     }
   ],
-  "tech_debt_epics": [
+  "bugs": [
     {
-      "id": 6,
-      "title": "TradingApp Tech Debt",
-      "description": "Address technical debt in the TradingApp.",
-      "applications": {
-        "TradingApp": {
-          "user_stories": [
-            {
-              "id": 6,
-              "title": "Refactor legacy code for improved performance.",
-              "hours_spent": 20
-            }
-          ]
-        }
-      }
+      "bug_id": 1,
+      "description": "Stock Quote Service is returning incorrect data intermittently.",
+      "state": "Open",
+      "time_estimate": "4 days"
     },
     {
-      "id": 7,
-      "title": "PortfolioManagementApp Tech Debt",
-      "description": "Address technical debt in the PortfolioManagementApp.",
-      "applications": {
-        "PortfolioManagementApp": {
-          "user_stories": [
-            {
-              "id": 7,
-              "title": "Update third-party dependencies to latest versions.",
-              "hours_spent": 15
-            }
-          ]
-        }
-      }
+      "bug_id": 2,
+      "description": "User authentication fails on the User Account Management App for some users.",
+      "state": "In Progress",
+      "time_estimate": "6 days"
     },
     {
-      "id": 8,
-      "title": "AlertingApp Tech Debt",
-      "description": "Address technical debt in the AlertingApp.",
-      "applications": {
-        "AlertingApp": {
-          "user_stories": [
-            {
-              "id": 8,
-              "title": "Optimize database queries for better performance.",
-              "hours_spent": 25
-            }
-          ]
-        }
-      }
+      "bug_id": 3,
+      "description": "Order Execution Service sometimes rejects valid orders without a clear reason.",
+      "state": "Open",
+      "time_estimate": "5 days"
     },
     {
-      "id": 9,
-      "title": "NewsApp Tech Debt",
-      "description": "Address technical debt in the NewsApp.",
-      "applications": {
-        "NewsApp": {
-          "user_stories": [
-            {
-              "id": 9,
-              "title": "Upgrade front-end libraries for improved user experience.",
-              "hours_spent": 20
-            }
-          ]
-        }
-      }
+      "bug_id": 4,
+      "description": "The Portfolio Dashboard Web App crashes when loading large portfolios.",
+      "state": "Open",
+      "time_estimate": "3 days"
     },
     {
-      "id": 10,
-      "title": "AnalyticsApp Tech Debt",
-      "description": "Address technical debt in the AnalyticsApp.",
-      "applications": {
-        "AnalyticsApp": {
-          "user_stories": [
-            {
-              "id": 10,
-              "title": "Refactor data processing code for better scalability.",
-              "hours_spent": 30
-            }
-          ]
-        }
-      }
+      "bug_id": 5,
+      "description": "Stock News Aggregator App does not refresh news feeds as expected.",
+      "state": "Open",
+      "time_estimate": "4 days"
+    },
+    {
+      "bug_id": 6,
+      "description": "Online Stock Trading Platform displays incorrect account balances for some users.",
+      "state": "In Progress",
+      "time_estimate": "5 days"
+    },
+    {
+      "bug_id": 7,
+      "description": "User Account Management App experiences slow performance during peak usage hours.",
+      "state": "Open",
+      "time_estimate": "4 days"
+    },
+    {
+      "bug_id": 8,
+      "description": "Stock Trading Mobile App crashes on startup for Android users.",
+      "state": "Open",
+      "time_estimate": "3 days"
+    },
+    {
+      "bug_id": 9,
+      "description": "News Feed Service occasionally provides duplicate news articles.",
+      "state": "In Progress",
+      "time_estimate": "2 days"
+    },
+    {
+      "bug_id": 10,
+      "description": "Portfolio Management Service fails to update stock prices in real-time.",
+      "state": "Open",
+      "time_estimate": "5 days"
+    },
+    {
+      "bug_id": 11,
+      "description": "Online Stock Trading Platform does not display the trading volume correctly.",
+      "state": "In Progress",
+      "time_estimate": "4 days"
+    },
+    {
+      "bug_id": 12,
+      "description": "User Account Management App shows an incorrect error message when users input invalid passwords.",
+      "state": "Open",
+      "time_estimate": "3 days"
+    },
+    {
+      "bug_id": 13,
+      "description": "Stock Quote Service API documentation is outdated and incomplete.",
+      "state": "Open",
+      "time_estimate": "2 days"
+    },
+    {
+      "bug_id": 14,
+      "description": "Portfolio Dashboard Web App lacks proper error handling for network timeouts.",
+      "state": "Open",
+      "time_estimate": "4 days"
+    },
+    {
+      "bug_id": 15,
+      "description": "Stock News Aggregator App does not clear cached data properly, leading to storage issues.",
+      "state": "In Progress",
+      "time_estimate": "6 days"
     }
   ]
 }

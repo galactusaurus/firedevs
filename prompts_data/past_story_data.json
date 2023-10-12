@@ -1,0 +1,271 @@
+{
+    "completed_user_stories": [
+      {
+        "story_title": "User Registration",
+        "application": "User Account Management App",
+        "developer": "John Smith",
+        "estimated_time": "4 hours",
+        "actual_time": "5 hours"
+      },
+      {
+        "story_title": "Login Functionality",
+        "application": "User Account Management App",
+        "developer": "John Smith",
+        "estimated_time": "3 hours",
+        "actual_time": "4 hours"
+      },
+      {
+        "story_title": "Password Reset Feature",
+        "application": "User Account Management App",
+        "developer": "Alice Johnson",
+        "estimated_time": "6 hours",
+        "actual_time": "7 hours"
+      },
+      {
+        "story_title": "Profile Update",
+        "application": "User Account Management App",
+        "developer": "Alice Johnson",
+        "estimated_time": "4 hours",
+        "actual_time": "4.5 hours"
+      },
+      {
+        "story_title": "Two-Factor Authentication",
+        "application": "User Account Management App",
+        "developer": "Mike Brown",
+        "estimated_time": "8 hours",
+        "actual_time": "9 hours"
+      },
+      {
+        "story_title": "User Data Deletion",
+        "application": "User Account Management App",
+        "developer": "Mike Brown",
+        "estimated_time": "6 hours",
+        "actual_time": "7 hours"
+      },
+      {
+        "story_title": "Change Username/Display Name",
+        "application": "User Account Management App",
+        "developer": "Emily Davis",
+        "estimated_time": "5 hours",
+        "actual_time": "6 hours"
+      },
+      {
+        "story_title": "Stock Price Chart Widget",
+        "application": "Stock Trading Mobile App",
+        "developer": "John Smith",
+        "estimated_time": "12 hours",
+        "actual_time": "15 hours"
+      },
+      {
+        "story_title": "News Feed Integration",
+        "application": "Stock Trading Mobile App",
+        "developer": "Alice Johnson",
+        "estimated_time": "10 hours",
+        "actual_time": "12 hours"
+      },
+      {
+        "story_title": "Portfolio Dashboard UI Redesign",
+        "application": "Portfolio Dashboard Web App",
+        "developer": "Mike Brown",
+        "estimated_time": "16 hours",
+        "actual_time": "18 hours"
+      },
+      {
+        "story_title": "Real-Time Stock Data Integration",
+        "application": "Portfolio Dashboard Web App",
+        "developer": "Emily Davis",
+        "estimated_time": "14 hours",
+        "actual_time": "16 hours"
+      },
+      {
+        "story_title": "News Article Sorting Algorithm",
+        "application": "Stock News Aggregator App",
+        "developer": "Chris Wilson",
+        "estimated_time": "8 hours",
+        "actual_time": "9 hours"
+      },
+      {
+        "story_title": "User Profile Display",
+        "application": "Online Stock Trading Platform",
+        "developer": "John Smith",
+        "estimated_time": "6 hours",
+        "actual_time": "7 hours"
+      },
+      {
+        "story_title": "Trade Execution Engine",
+        "application": "Online Stock Trading Platform",
+        "developer": "Mike Brown",
+        "estimated_time": "20 hours",
+        "actual_time": "22 hours"
+      },
+      {
+        "story_title": "Account Balances Update",
+        "application": "User Account Management App",
+        "developer": "Alice Johnson",
+        "estimated_time": "4 hours",
+        "actual_time": "5 hours"
+      },
+      {
+        "story_title": "Privacy Policy Compliance Review",
+        "application": "User Account Management App",
+        "developer": "Chris Wilson",
+        "estimated_time": "6 hours",
+        "actual_time": "7 hours"
+      },
+      {
+        "story_title": "Push Notifications for Price Alerts",
+        "application": "Stock Trading Mobile App",
+        "developer": "Emily Davis",
+        "estimated_time": "8 hours",
+        "actual_time": "9 hours"
+      },
+      {
+        "story_title": "Enhanced Data Visualization",
+        "application": "Stock Trading Mobile App",
+        "developer": "John Smith",
+        "estimated_time": "14 hours",
+        "actual_time": "16 hours"
+      },
+      {
+        "story_title": "News Subscription Service",
+        "application": "Stock Trading Mobile App",
+        "developer": "Mike Brown",
+        "estimated_time": "12 hours",
+        "actual_time": "14 hours"
+      },
+      {
+        "story_title": "Customizable Dashboard Widgets",
+        "application": "Portfolio Dashboard Web App",
+        "developer": "Alice Johnson",
+        "estimated_time": "10 hours",
+        "actual_time": "12 hours"
+      },
+      {
+        "story_title": "Enhanced Portfolio Performance Metrics",
+        "application": "Portfolio Dashboard Web App",
+        "developer": "Emily Davis",
+        "estimated_time": "16 hours",
+        "actual_time": "18 hours"
+      },
+      {
+        "story_title": "Real-Time Stock News Filtering",
+        "application": "Stock News Aggregator App",
+        "developer": "Chris Wilson",
+        "estimated_time": "8 hours",
+        "actual_time": "9 hours"
+      },
+      {
+        "story_title": "Advanced Order Types",
+        "application": "Online Stock Trading Platform",
+        "developer": "John Smith",
+        "estimated_time": "20 hours",
+        "actual_time": "22 hours"
+      },
+      {
+        "story_title": "Transaction History Export",
+        "application": "Online Stock Trading Platform",
+        "developer": "Mike Brown",
+        "estimated_time": "10 hours",
+        "actual_time": "11 hours"
+      },
+      {
+        "story_title": "Multi-Factor Authentication Enhancement",
+        "application": "User Account Management App",
+        "developer": "Alice Johnson",
+        "estimated_time": "6 hours",
+        "actual_time": "7 hours"
+      },
+      {
+        "story_title": "User Activity Logs Management",
+        "application": "User Account Management App",
+        "developer": "Chris Wilson",
+        "estimated_time": "8 hours",
+        "actual_time": "9 hours"
+      },
+      {
+        "story_title": "Secure Document Upload",
+        "application": "User Account Management App",
+        "developer": "Emily Davis",
+        "estimated_time": "10 hours",
+        "actual_time": "12 hours"
+      },
+      {
+        "story_title": "User Feedback and Support Integration",
+        "application": "Stock Trading Mobile App",
+        "developer": "John Smith",
+        "estimated_time": "12 hours",
+        "actual_time": "14 hours"
+      },
+      {
+        "story_title": "Chart Synchronization Across Devices",
+        "application": "Stock Trading Mobile App",
+        "developer": "Mike Brown",
+        "estimated_time": "10 hours",
+        "actual_time": "11 hours"
+      },
+      {
+        "story_title": "News Article Sharing Feature",
+        "application": "Stock Trading Mobile App",
+        "developer": "Alice Johnson",
+        "estimated_time": "6 hours",
+        "actual_time": "7 hours"
+      },
+      {
+        "story_title": "Portfolio Import/Export Functionality",
+        "application": "Portfolio Dashboard Web App",
+        "developer": "Chris Wilson",
+        "estimated_time": "14 hours",
+        "actual_time": "15 hours"
+      },
+      {
+        "story_title": "Customizable Dashboard Themes",
+        "application": "Portfolio Dashboard Web App",
+        "developer": "Emily Davis",
+        "estimated_time": "8 hours",
+        "actual_time": "10 hours"
+      },
+      {
+        "story_title": "News Categorization and Tagging",
+        "application": "Stock News Aggregator App",
+        "developer": "John Smith",
+        "estimated_time": "12 hours",
+        "actual_time": "13 hours"
+      },
+      {
+        "story_title": "In-App Chat Support",
+        "application": "Stock News Aggregator App",
+        "developer": "Mike Brown",
+        "estimated_time": "10 hours",
+        "actual_time": "11 hours"
+      },
+      {
+        "story_title": "Advanced Order Execution Analytics",
+        "application": "Online Stock Trading Platform",
+        "developer": "Alice Johnson",
+        "estimated_time": "16 hours",
+        "actual_time": "17 hours"
+      },
+      {
+        "story_title": "Interactive Stock Price Notifications",
+        "application": "Online Stock Trading Platform",
+        "developer": "Chris Wilson",
+        "estimated_time": "8 hours",
+        "actual_time": "9 hours"
+      },
+      {
+        "story_title": "Enhanced Account Balance Dashboard",
+        "application": "User Account Management App",
+        "developer": "Emily Davis",
+        "estimated_time": "12 hours",
+        "actual_time": "13 hours"
+      },
+      {
+        "story_title": "Advanced Account Security Review",
+        "application": "User Account Management App",
+        "developer": "John Smith",
+        "estimated_time": "10 hours",
+        "actual_time": "11 hours"
+      }
+    ]
+  }
+  

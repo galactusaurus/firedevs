@@ -1,123 +1,111 @@
 {
- "web_services": [
+  "web_services": [
     {
-      "name": "StockQuoteService",
+      "service_name": "Stock Quote Service",
       "endpoints": [
         {
-          "name": "getQuote",
-          "url": "/quote/:symbol",
-          "description": "Get stock quote by symbol"
+          "name": "GetStockQuote",
+          "description": "Retrieve real-time stock quotes."
         },
         {
-          "name": "getHistoricalData",
-          "url": "/historical/:symbol",
-          "description": "Get historical stock data by symbol"
+          "name": "HistoricalStockQuote",
+          "description": "Retrieve historical stock quotes."
         }
       ]
     },
     {
-      "name": "OrderExecutionService",
+      "service_name": "Order Execution Service",
       "endpoints": [
         {
-          "name": "placeOrder",
-          "url": "/order/place",
-          "description": "Place a stock trading order"
+          "name": "PlaceOrder",
+          "description": "Submit a stock trading order."
         },
         {
-          "name": "cancelOrder",
-          "url": "/order/cancel/:id",
-          "description": "Cancel a stock trading order by ID"
+          "name": "CancelOrder",
+          "description": "Cancel an existing stock trading order."
         }
       ]
     },
     {
-      "name": "PortfolioService",
+      "service_name": "Portfolio Management Service",
       "endpoints": [
         {
-          "name": "getPortfolio",
-          "url": "/portfolio",
-          "description": "Get user's stock portfolio"
-        },
-        {
-          "name": "updatePortfolio",
-          "url": "/portfolio/update",
-          "description": "Update user's stock portfolio"
+          "name": "GetPortfolio",
+          "description": "Retrieve user's stock portfolio."
         }
       ]
     },
     {
-      "name": "AlertService",
+      "service_name": "User Authentication Service",
       "endpoints": [
         {
-          "name": "setPriceAlert",
-          "url": "/alert/set",
-          "description": "Set a price alert for a stock"
+          "name": "AuthenticateUser",
+          "description": "Authenticate users for secure access."
         }
       ]
     },
     {
-      "name": "NewsService",
+      "service_name": "News Feed Service",
       "endpoints": [
         {
-          "name": "getNews",
-          "url": "/news",
-          "description": "Get the latest stock market news"
+          "name": "GetNews",
+          "description": "Retrieve real-time financial news."
         }
       ]
     }
   ],
   "customer_facing_applications": [
     {
-      "name": "TradingApp",
-      "services_used": ["StockQuoteService","OrderExecutionService"],
-      "endpoints_used": ["StockQuoteService.getQuote", "OrderExecutionService.placeOrder"]
+      "app_name": "Stock Trading Mobile App",
+      "endpoints_used": ["GetStockQuote", "PlaceOrder"],
+      "tech_stack": ["Java", "React"]
     },
     {
-      "name": "PortfolioManagementApp",
-      "services_used": ["PortfolioService"],
-      "endpoints_used": ["PortfolioService.getPortfolio", "PortfolioService.updatePortfolio"]
+      "app_name": "Portfolio Dashboard Web App",
+      "endpoints_used": ["GetPortfolio"],
+      "tech_stack": ["Java", "React"]
     },
     {
-      "name": "AlertingApp",
-      "services_used": ["AlertService"],
-      "endpoints_used": ["AlertService.setPriceAlert"]
+      "app_name": "Stock News Aggregator App",
+      "endpoints_used": ["GetNews"],
+      "tech_stack": ["Python"]
     },
     {
-      "name": "NewsApp",
-      "services_used": ["NewsService"],
-      "endpoints_used": ["NewsService.getNews"]
+      "app_name": "Online Stock Trading Platform",
+      "endpoints_used": ["GetStockQuote", "PlaceOrder", "CancelOrder"],
+      "tech_stack": ["Java", "React"]
     },
     {
-      "name": "AnalyticsApp",
-      "services_used": ["StockQuoteService"],
-      "endpoints_used": ["StockQuoteService.getHistoricalData"]
+      "app_name": "User Account Management App",
+      "endpoints_used": ["AuthenticateUser"],
+      "tech_stack": ["Java", "React"]
     }
   ],
   "business_processes": [
     {
-      "name": "StockTrading",
-      "description": "Process of buying and selling stocks",
-      "applications_used": ["TradingApp"]
+      "process_name": "Place Stock Order",
+      "applications_used": ["Stock Trading Mobile App", "Online Stock Trading Platform"],
+      "services_used": ["Stock Quote Service", "Order Execution Service"]
     },
     {
-      "name": "AlertManagement",
-      "description": "Managing price alerts for stocks",
-      "applications_used": ["AlertingApp"]
+      "process_name": "View Portfolio",
+      "applications_used": ["Portfolio Dashboard Web App"],
+      "services_used": ["Portfolio Management Service"]
     },
     {
-      "name": "PortfolioTracking",
-      "description": "Tracking and managing stock portfolios",
-      "applications_used": ["PortfolioManagementApp"]
+      "process_name": "Read Stock News",
+      "applications_used": ["Stock News Aggregator App"],
+      "services_used": ["News Feed Service"]
     },
     {
-      "name": "NewsMonitoring",
-      "description": "Monitoring and receiving news updates",
-      "applications_used": ["NewsApp"]
+      "process_name": "User Authentication",
+      "applications_used": ["User Account Management App", "Stock Trading Mobile App"],
+      "services_used": ["User Authentication Service"]
     },
     {
-      "name": "MarketAnalysis",
-      "description": "Analyzing historical stock data and trends",
-      "applications_used": ["AnalyticsApp"]
+      "process_name": "Retrieve Stock Quote",
+      "applications_used": ["Stock Trading Mobile App", "Online Stock Trading Platform"],
+      "services_used": ["Stock Quote Service"]
     }
   ]
 }

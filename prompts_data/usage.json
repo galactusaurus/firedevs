@@ -1,0 +1,63 @@
+{
+    "weekday_usage_statistics": {
+      "date": "2023-10-02",
+      "day_of_week": "Monday",
+      "applications": [
+        {
+          "app_name": "Stock Trading Mobile App",
+          "four_hourly_usage": [
+            { "time_period": "00:00 - 03:59", "average_users": 750 },
+            { "time_period": "04:00 - 07:59", "average_users": 820 },
+            { "time_period": "08:00 - 11:59", "average_users": 950 },
+            { "time_period": "12:00 - 15:59", "average_users": 1100 },
+            { "time_period": "16:00 - 19:59", "average_users": 1050 },
+            { "time_period": "20:00 - 23:59", "average_users": 980 }
+          ]
+        },
+        {
+          "app_name": "Portfolio Dashboard Web App",
+          "four_hourly_usage": [
+            { "time_period": "00:00 - 03:59", "average_users": 450 },
+            { "time_period": "04:00 - 07:59", "average_users": 520 },
+            { "time_period": "08:00 - 11:59", "average_users": 600 },
+            { "time_period": "12:00 - 15:59", "average_users": 700 },
+            { "time_period": "16:00 - 19:59", "average_users": 680 },
+            { "time_period": "20:00 - 23:59", "average_users": 630 }
+          ]
+        },
+        {
+          "app_name": "Stock News Aggregator App",
+          "four_hourly_usage": [
+            { "time_period": "00:00 - 03:59", "average_users": 350 },
+            { "time_period": "04:00 - 07:59", "average_users": 380 },
+            { "time_period": "08:00 - 11:59", "average_users": 420 },
+            { "time_period": "12:00 - 15:59", "average_users": 460 },
+            { "time_period": "16:00 - 19:59", "average_users": 440 },
+            { "time_period": "20:00 - 23:59", "average_users": 410 }
+          ]
+        },
+        {
+          "app_name": "Online Stock Trading Platform",
+          "four_hourly_usage": [
+            { "time_period": "00:00 - 03:59", "average_users": 950 },
+            { "time_period": "04:00 - 07:59", "average_users": 1050 },
+            { "time_period": "08:00 - 11:59", "average_users": 1150 },
+            { "time_period": "12:00 - 15:59", "average_users": 1300 },
+            { "time_period": "16:00 - 19:59", "average_users": 1250 },
+            { "time_period": "20:00 - 23:59", "average_users": 1180 }
+          ]
+        },
+        {
+          "app_name": "User Account Management App",
+          "four_hourly_usage": [
+            { "time_period": "00:00 - 03:59", "average_users": 350 },
+            { "time_period": "04:00 - 07:59", "average_users": 400 },
+            { "time_period": "08:00 - 11:59", "average_users": 420 },
+            { "time_period": "12:00 - 15:59", "average_users": 450 },
+            { "time_period": "16:00 - 19:59", "average_users": 410 },
+            { "time_period": "20:00 - 23:59", "average_users": 380 }
+          ]
+        }
+      ]
+    }
+  }

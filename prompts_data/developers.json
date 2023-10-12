@@ -1,0 +1,24 @@
+{
+    "developers": [
+      {
+        "name": "John Smith",
+        "skillset": ["Front-End Development", "JavaScript", "React", "HTML", "CSS"]
+      },
+      {
+        "name": "Alice Johnson",
+        "skillset": ["Back-End Development", "Python", "Django", "Database Design"]
+      },
+      {
+        "name": "Mike Brown",
+        "skillset": ["Full-Stack Development", "Java", "Spring Boot", "JavaScript", "Angular"]
+      },
+      {
+        "name": "Emily Davis",
+        "skillset": ["Mobile App Development", "Swift", "iOS Development", "UI/UX Design"]
+      },
+      {
+        "name": "Chris Wilson",
+        "skillset": ["DevOps", "Linux System Administration", "Docker", "Kubernetes"]
+      }
+    ]
+  }

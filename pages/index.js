@@ -1,59 +1,15 @@
 import Head from "next/head";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import styles from "./index.module.css";
 import parse from "html-react-parser";
+import kraaangconsole from "../pages/kraaangconsole/kraaangconsole";
 
 export default function Home() {
-  const [promptInput, setPromptInput] = useState("");
-  const [result, setResult] = useState(" ");
-  const [runningResult, setRunningResult] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  function parseResult(result) {
-    return parse(result);
-  }
-
-  async function onSubmit(event) {
-    event.preventDefault();
-    try {
-      setLoading(true);
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt: promptInput }),
-      });
-
-      const data = await response.json();
-      if (response.status !== 200) {
-        throw data.error || new Error(`Request failed with status ${response.status}`);
-      }
-
-      var thisArray = runningResult.slice();
-      thisArray.push("<div class='question'>" + promptInput + "</div>");
-      setRunningResult(thisArray);
-      thisArray.push(data.result);
-      setRunningResult(thisArray);
-
-      setPromptInput("");
-      setLoading(false);
-    } catch (error) {
-      // Consider implementing your own error handling logic here
-      console.error(error);
-      alert(error.message);
-      setLoading(false);
-    }
-  }
-
-  function resultBuilder() {
-    return runningResult.map((item, index) => {
-      return (<div id={index}>{parseResult(item)}</div>);
-    })
-
-  }
+  
 
   return (
+
+
     <div>
       <Head>
         <title>OpenAI Quickstart</title>
@@ -63,43 +19,11 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.header}>
-          <h1>K. R. A. A. N. G.</h1>
+          <h1>K. R. A. A. A. N. G.</h1>
         </div>
-        <div className={styles.inputBox}>
-          <form onSubmit={onSubmit}>
-
-            <div className={styles.promptBox}>
-              <input
-                type="text"
-                name="prompt"
-                placeholder="query kraang"
-                value={promptInput}
-                onChange={(e) => setPromptInput(e.target.value)}
-              />
-            </div>
-            <div className={styles.promptButton}>
-              <input type="submit" value="Generate" />
-            </div>
-
-          </form>
+        <div className={styles.krangCage}>
+          {kraaangconsole()}
         </div>
-
-        <div className={styles.krangConsole}>
-          <div className={styles.result}>{resultBuilder()}</div>
-          {loading ?
-            (<div className={styles.ldsdualring}></div>)
-            :
-            (<div></div>)
-          }
-        </div>
-
-
-
-
-
-
-
-
       </main>
 
 
