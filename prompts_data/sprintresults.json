@@ -1,0 +1,154 @@
+{
+    "sprint_results": [
+      {
+        "sprint_number": 1,
+        "start_date": "2023-09-01",
+        "end_date": "2023-09-14",
+        "developer_results": [
+          {
+            "developer": "Andy",
+            "stories_attempted": 12,
+            "stories_completed": 10,
+            "bugs_introduced": 2
+          },
+          {
+            "developer": "Betty",
+            "stories_attempted": 14,
+            "stories_completed": 13,
+            "bugs_introduced": 1
+          },
+          {
+            "developer": "Cate",
+            "stories_attempted": 11,
+            "stories_completed": 11,
+            "bugs_introduced": 0
+          }
+        ]
+      },
+      {
+        "sprint_number": 2,
+        "start_date": "2023-09-15",
+        "end_date": "2023-09-28",
+        "developer_results": [
+          {
+            "developer": "Andy",
+            "stories_attempted": 11,
+            "stories_completed": 9,
+            "bugs_introduced": 3
+          },
+          {
+            "developer": "Betty",
+            "stories_attempted": 13,
+            "stories_completed": 12,
+            "bugs_introduced": 1
+          },
+          {
+            "developer": "Cate",
+            "stories_attempted": 10,
+            "stories_completed": 10,
+            "bugs_introduced": 0
+          }
+        ]
+      },
+      {
+        "sprint_number": 3,
+        "start_date": "2023-09-29",
+        "end_date": "2023-10-12",
+        "developer_results": [
+          {
+            "developer": "Andy",
+            "stories_attempted": 10,
+            "stories_completed": 9,
+            "bugs_introduced": 2
+          },
+          {
+            "developer": "Betty",
+            "stories_attempted": 12,
+            "stories_completed": 11,
+            "bugs_introduced": 1
+          },
+          {
+            "developer": "Cate",
+            "stories_attempted": 11,
+            "stories_completed": 11,
+            "bugs_introduced": 0
+          }
+        ]
+      },
+      {
+        "sprint_number": 4,
+        "start_date": "2023-10-13",
+        "end_date": "2023-10-26",
+        "developer_results": [
+          {
+            "developer": "Andy",
+            "stories_attempted": 9,
+            "stories_completed": 8,
+            "bugs_introduced": 2
+          },
+          {
+            "developer": "Betty",
+            "stories_attempted": 11,
+            "stories_completed": 10,
+            "bugs_introduced": 1
+          },
+          {
+            "developer": "Cate",
+            "stories_attempted": 10,
+            "stories_completed": 10,
+            "bugs_introduced": 0
+          }
+        ]
+      },
+      {
+        "sprint_number": 5,
+        "start_date": "2023-10-27",
+        "end_date": "2023-11-09",
+        "developer_results": [
+          {
+            "developer": "Andy",
+            "stories_attempted": 11,
+            "stories_completed": 10,
+            "bugs_introduced": 2
+          },
+          {
+            "developer": "Betty",
+            "stories_attempted": 12,
+            "stories_completed": 12,
+            "bugs_introduced": 0
+          },
+          {
+            "developer": "Cate",
+            "stories_attempted": 10,
+            "stories_completed": 9,
+            "bugs_introduced": 1
+          }
+        ]
+      },
+      {
+        "sprint_number": 6,
+        "start_date": "2023-11-10",
+        "end_date": "2023-11-23",
+        "developer_results": [
+          {
+            "developer": "Andy",
+            "stories_attempted": 12,
+            "stories_completed": 11,
+            "bugs_introduced": 2
+          },
+          {
+            "developer": "Betty",
+            "stories_attempted": 13,
+            "stories_completed": 13,
+            "bugs_introduced": 0
+          },
+          {
+            "developer": "Cate",
+            "stories_attempted": 11,
+            "stories_completed": 10,
+            "bugs_introduced": 1
+          }
+        ]
+      }
+    ]
+  }

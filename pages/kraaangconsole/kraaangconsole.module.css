@@ -158,4 +158,14 @@
     background-color: #222;
     height: 695px;
   }
+
+  .panelButtonHolder
+  button{
+    background-color: #444;
+    border-radius: 5px;
+    color: #00FF00;
+    width: 60%;
+    padding: 10px;
+    margin-top: 20px;
+  }
   

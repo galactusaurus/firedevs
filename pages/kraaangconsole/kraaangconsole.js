@@ -21,16 +21,15 @@ export default function kraaangconsole(props) {
         }
     });
 
-    async function onSubmit(event) {
-        event.preventDefault();
+    async function makeCall(thisPrompt, route){
         try {
             setLoading(true);
-            const response = await fetch("/api/generate", {
+            const response = await fetch("/api/"+route, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ prompt: promptInput }),
+                body: JSON.stringify({ prompt: thisPrompt }),
             });
 
             const data = await response.json();
@@ -39,7 +38,7 @@ export default function kraaangconsole(props) {
             }
 
             var thisArray = runningResult.slice();
-            thisArray.push("<div class='question'>" + promptInput + "</div>");
+            thisArray.push("<div class='question'>" + thisPrompt + "</div>");
             setRunningResult(thisArray);
             thisArray.push(data.result);
             setRunningResult(thisArray);
@@ -53,12 +52,41 @@ export default function kraaangconsole(props) {
             setLoading(false);
         }
     }
+    async function onSubmit(event) {
+        event.preventDefault();
+        await makeCall(promptInput, "generate");
+    }
 
     function resultBuilder() {
         return runningResult.map((item, index) => {
             return (<div id={index}>{parseResult(item)}</div>);
         })
 
+    }
+
+    async function showTeam(e){
+        e.preventDefault();        
+        await makeCall("show me the team with skillsets, don't include gender data", "teamOnly");
+    }
+
+    async function analyzeBacklog(e){
+        e.preventDefault();        
+        await makeCall("show the backlog in this format, include all stories and bugs, don't included completed stories or bugs: story or bug | number | status | description", "backlogOnly");
+    }
+
+    async function instantRetro(e){
+        e.preventDefault();        
+        await makeCall("look at the last sprint and analyze the results, create a report on the data and speculate why some developers didn't complete their stories and why bugs were introduced", "retro");
+    }
+
+    async function suggestNextSprint(e){
+        e.preventDefault();        
+        await makeCall(`look at what his not yet started in the backlog, assign only stories in Not Started status, assign items 
+        to developers understanding that only 80 hours may be planned for each developer, 
+        and each story may only go to one developer, call this Kraaang's Sprint Plan
+        and structure it such that the developer is parent div and the stories are in an unordered list
+        beneath. make sure to include the story or bug number and the description.
+        `, "generate");
     }
 
     return (
@@ -93,11 +121,18 @@ export default function kraaangconsole(props) {
             <div className={styles.powerPanel}>
                 <div className={styles.panelHeader}>POWER PANEL</div>
                 <div className={styles.panelButtonHolder}>
-                    <button
-                    >
-                        Analyze Our Backlog
+                    <button onClick={showTeam}>
+                        Team
                     </button>
-
+                    <button onClick={analyzeBacklog}>
+                        Backlog
+                    </button>
+                    <button onClick={instantRetro}>
+                        Instant Retro
+                    </button>
+                    <button onClick={suggestNextSprint}>
+                        Plan Next Sprint
+                    </button>
                 </div>
             </div>
         </div>
