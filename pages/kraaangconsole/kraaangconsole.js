@@ -1,17 +1,25 @@
 import Head from "next/head";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import styles from "./kraaangconsole.module.css";
 import parse from "html-react-parser";
 
 export default function kraaangconsole(props) {
     const [promptInput, setPromptInput] = useState("");
-    const [result, setResult] = useState(" ");
     const [runningResult, setRunningResult] = useState([]);
     const [loading, setLoading] = useState(false);
 
     function parseResult(result) {
         return parse(result);
     }
+
+    // Similar to componentDidMount and componentDidUpdate:
+    useEffect(() => {
+        if (runningResult.length === 0) {
+            var thisArray = runningResult.slice();
+            thisArray.push("<div class='question'>******** I am KRAAANG, your agile advisor, coach, consigliere, and analyst. Ask me anything or use my power panel. **************</div>");
+            setRunningResult(thisArray);
+        }
+    });
 
     async function onSubmit(event) {
         event.preventDefault();
@@ -83,7 +91,14 @@ export default function kraaangconsole(props) {
                 </div>
             </div>
             <div className={styles.powerPanel}>
-                some shit goes here
+                <div className={styles.panelHeader}>POWER PANEL</div>
+                <div className={styles.panelButtonHolder}>
+                    <button
+                    >
+                        Analyze Our Backlog
+                    </button>
+
+                </div>
             </div>
         </div>
     );

@@ -56,6 +56,7 @@
     padding: 10px;
     width: 98%;
     border-radius: 5px;
+    margin-left: 8px;
   }
   
   .inputBox{
@@ -69,6 +70,7 @@
     padding: 10px;
     width: 98%;
     border-radius: 5px;
+    margin-left: 15px;
    
   }
   
@@ -76,6 +78,7 @@
     width: 100%;
     float: left;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
+  
   }
   
   
@@ -100,27 +103,59 @@
   .krangConsole{
     width:99%;
     background-color: #444;
-    height:800px;
+    height:700px;
     float: left;
     border-radius: 5px;
     border-color: #00FF00;
     margin-top:12px;
     margin-left:8px;
     overflow:auto;
+    
+    border: 1px solid #00FF00; /* Green border for input */
+    padding: 10px;
+    width: 98%;
+    border-radius: 5px;
   }
   
   .holder{
-    width:100%;
+    width:90%;
     float:left;    
   }
   .commBox{
     float:left;
     width: 70%;
+    margin-top: 10px;
   }
 
   .powerPanel{
     float: left;
     width: 30%;
   }
- 
+
+  .panelHeader{
+    color: #00FF00; /* Green text color for input */
+    border: 1px solid #00FF00; /* Green border for input */
+    padding: 10px;
+    margin-top:10px;
+    margin-left:15px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: tmnt;
+    text-align: center;
+    background-color: #222;
+  }
+
+  .panelButtonHolder{
+    color: #00FF00; /* Green text color for input */
+    border: 1px solid #00FF00; /* Green border for input */
+    padding: 10px;
+    margin-top:10px;
+    margin-left:15px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: tmnt;
+    text-align: center;
+    background-color: #222;
+    height: 695px;
+  }
   
