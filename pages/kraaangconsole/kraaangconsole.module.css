@@ -169,3 +169,16 @@
     margin-top: 20px;
   }
   
+  .clearButton{
+    top:22%;
+    left:60%;
+    background-color: red;
+    color: white;
+    border-radius: 15px;
+    position: absolute;
+  }
+
+  .oozeGif{
+    height:99%;
+    width:100%;
+  }

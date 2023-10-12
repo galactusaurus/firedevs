@@ -37,7 +37,7 @@ export default async function (req, res) {
       model: "gpt-3.5-turbo-instruct-0914",
       prompt: generatePrompt(prompt),
       temperature: 0.6,
-      max_tokens: 1100,
+      max_tokens: 2100,
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
@@ -62,10 +62,11 @@ function generatePrompt(prompt) {
    
     let prompt2 = ` 
     Given that KRAAANG stands for Kaleidoscopic Relationship and Application Analysis Assisted by Neural Generation
-
+    and given the following user story and bug data
+    ${JSON.stringify(epicData)}
     and given the following developer data
     ${JSON.stringify(developerData)}
-
+    epicData
     and given this prompt
     ${capitalizedPrompt}
     adopt the persona of Krang from the Ninja Turtles and 

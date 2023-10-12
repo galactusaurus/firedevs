@@ -3,10 +3,13 @@ import { useCallback, useState, useEffect } from "react";
 import styles from "./kraaangconsole.module.css";
 import parse from "html-react-parser";
 
+
 export default function kraaangconsole(props) {
     const [promptInput, setPromptInput] = useState("");
     const [runningResult, setRunningResult] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [oozing, setOozing] = useState(false);
+    
 
     function parseResult(result) {
         return parse(result);
@@ -14,7 +17,7 @@ export default function kraaangconsole(props) {
 
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
-        if (runningResult.length === 0) {
+        if (runningResult.length === 0 & !oozing) {
             var thisArray = runningResult.slice();
             thisArray.push("<div class='question'>******** I am KRAAANG, your agile advisor, coach, consigliere, and analyst. Ask me anything or use my power panel. **************</div>");
             setRunningResult(thisArray);
@@ -71,22 +74,37 @@ export default function kraaangconsole(props) {
 
     async function analyzeBacklog(e){
         e.preventDefault();        
-        await makeCall("show the backlog in this format, include all stories and bugs, don't included completed stories or bugs: story or bug | number | status | description", "backlogOnly");
+        await makeCall("show all stories and bugs, don't include completed stories or bugs: story or bug | number | status | description", "backlogOnly");
     }
 
     async function instantRetro(e){
         e.preventDefault();        
-        await makeCall("look at the last sprint and analyze the results, create a report on the data and speculate why some developers didn't complete their stories and why bugs were introduced", "retro");
+        await makeCall(`
+        look at the last sprint and analyze the results, 
+        create a report on the data and speculate why some developers didn't complete their stories and why bugs were introduced.
+        look back at the sprint before and compare the results statistically.
+        `, "retro");
     }
 
     async function suggestNextSprint(e){
         e.preventDefault();        
-        await makeCall(`look at what his not yet started in the backlog, assign only stories in Not Started status, assign items 
-        to developers understanding that only 80 hours may be planned for each developer, 
-        and each story may only go to one developer, call this Kraaang's Sprint Plan
-        and structure it such that the developer is parent div and the stories are in an unordered list
-        beneath. make sure to include the story or bug number and the description.
-        `, "generate");
+        await makeCall(`for each developer, assign one or two stories or bugs with a status of Not Started and a time_estimate less than or equal to 32 hours. all stories and bugs in status Not Started should be assigned. include the story or bug number and the time_Estimate for the bug or story in the response.
+        `, "resourcing");
+    }
+
+    async function analyzeStories(e){
+        e.preventDefault();
+        await makeCall(`analyze the stories in "not started" status, see if any need more detail`, "generate");
+    }
+
+    async function clearResults(){
+        setRunningResult([]);  
+        setOozing(true);
+        setTimeout(function(){  
+            
+            setOozing(false);        
+        }, 2500);
+        
     }
 
     return (
@@ -116,6 +134,12 @@ export default function kraaangconsole(props) {
                         :
                         (<div></div>)
                     }
+                    {
+                     oozing ? 
+                     (<img className={styles.oozeGif} src="/ooze.gif" />)
+                     :
+                     (<div></div>)   
+                    }
                 </div>
             </div>
             <div className={styles.powerPanel}>
@@ -133,8 +157,14 @@ export default function kraaangconsole(props) {
                     <button onClick={suggestNextSprint}>
                         Plan Next Sprint
                     </button>
+                    <button onClick={analyzeStories}>
+                        Analyze Backlog
+                    </button>
+                    
                 </div>
             </div>
+
+            <button className={styles.clearButton} onClick={clearResults}>Clear</button>
         </div>
     );
 }

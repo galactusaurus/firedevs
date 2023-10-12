@@ -4,6 +4,7 @@ import appData from '../../prompts_data/svc_app_bp.json';
 import usageData from '../../prompts_data/usage.json';
 import developerData from '../../prompts_data/developers.json';
 import pastWorkData from '../../prompts_data/past_story_data.json';
+import sprintData from '../../prompts_data/sprintresults.json';
 
 
 const configuration = new Configuration({
@@ -71,6 +72,9 @@ function generatePrompt(prompt) {
 
     and given the following developer data
     ${JSON.stringify(developerData)}
+
+    and the following past sprint data
+    ${JSON.stringify(sprintData)}
 
     and given this prompt
     ${capitalizedPrompt}
