@@ -16,13 +16,13 @@ function ForceGraph({
     nodeStroke = "#fff", // node stroke color
     nodeStrokeWidth = 1.5, // node stroke width, in pixels
     nodeStrokeOpacity = 1, // node stroke opacity
-    nodeRadius = 5, // node radius, in pixels
+    nodeRadius, // node radius, in pixels
     nodeStrength,
     linkSource = ({ source }) => source, // given d in links, returns a node identifier string
     linkTarget = ({ target }) => target, // given d in links, returns a node identifier string
-    linkStroke = "#999", // link stroke color
+    linkStroke = "#fff", // link stroke color
     linkStrokeOpacity = 0.6, // link stroke opacity
-    linkStrokeWidth = 1.5, // given d in links, returns a stroke width in pixels
+    linkStrokeWidth = 5, // given d in links, returns a stroke width in pixels
     linkStrokeLinecap = "round", // link stroke linecap
     linkStrength,
     colors = d3.schemeTableau10, // an array of color strings, for the node groups
@@ -35,7 +35,9 @@ function ForceGraph({
     const LS = d3.map(links, linkSource).map(intern);
     const LT = d3.map(links, linkTarget).map(intern);
     if (nodeTitle === undefined) nodeTitle = (_, i) => N[i];
+    if (nodeRadius === undefined) nodeRadius = (_, i) => N[i];
     const T = nodeTitle == null ? null : d3.map(nodes, nodeTitle);
+    const Q = nodeRadius == null ? null : d3.map(nodes, nodeRadius);
     const G = nodeGroup == null ? null : d3.map(nodes, nodeGroup).map(intern);
     const W = typeof linkStrokeWidth !== "function" ? null : d3.map(links, linkStrokeWidth);
     const L = typeof linkStroke !== "function" ? null : d3.map(links, linkStroke);
@@ -91,7 +93,11 @@ function ForceGraph({
     if (W) link.attr("stroke-width", ({ index: i }) => W[i]);
     if (L) link.attr("stroke", ({ index: i }) => L[i]);
     if (G) node.attr("fill", ({ index: i }) => color(G[i]));
+    console.log("T is :: ");
+    console.log(T);
     if (T) node.append("title").text(({ index: i }) => T[i]);
+    if (T) node.attr("onclick", ({ index: i }) => T[i].split("\n")[1]==='advisor' ? "showModalForFa(\""+T[i].split("\n")[0]+"\");" : null);
+    if (Q) node.attr("r", ({ index: i }) => Q[i]);
     if (invalidation != null) invalidation.then(() => simulation.stop());
 
     function intern(value) {
@@ -134,17 +140,22 @@ function ForceGraph({
             .on("end", dragended);
     }
 
+    console.log(svg.node());
+
     return Object.assign(svg.node(), { scales: { color } });
 }
 selectedDataElements = {};
 dataelements = giveElements();
 
 function buildSvg(selectedElements) {
+    console.log("\n\n\n\n\n\n");
+    console.log(selectedElements);
     var svg = ForceGraph(selectedElements, {
         id: "mySvg",
         nodeId: d => d.id,
         nodeGroup: d => d.group,
         nodeTitle: d => `${d.id}\n${d.ntype}`,
+        nodeRadius: d => d.ntype === 'advisor' ? 20 : d.ntype === 'cause' ? 10 : 5,
         linkStrokeWidth: l => Math.sqrt(l.value),
         width: 1930,
         heigh: 800,
@@ -164,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 function searchFromPanel(element) {
     $("#searchval").val(element);
     rebuildSvg();
+    showModalForFa(element);
 }
 
 function listSelectedConnectors() {
@@ -348,3 +360,20 @@ function exportToCsv(filename, rows) {
         }
     }
 }
+
+function showModalForFa(faName) {
+
+
+    var modal = $("#faModal");
+    console.log(modal);
+    $("#faModalName").text(faName);
+    $('#imgSrc').attr("src","../"+faName+".png");
+    $("#faModalEmail").attr("href","mailto:"+faName+"@edwardjones.com");
+    $("#faModalEmail").text(faName+"@edwardjones.com");
+    modal.show();
+
+
+
+}
+
+
