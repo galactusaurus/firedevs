@@ -111,7 +111,7 @@ export default function kraaangconsole(props) {
                             <input
                                 type="text"
                                 name="prompt"
-                                placeholder="query kraang"
+                                placeholder="Let me know about your passions"
                                 value={promptInput}
                                 onChange={(e) => setPromptInput(e.target.value)}
                             />
