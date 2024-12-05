@@ -225,7 +225,7 @@ function rebuildSvg() {
     if (causes !== 'ALL' || (sval !== '' && sval !== undefined)) {
         let myArray = causes.split(',');
 
-        var depthOfSearch = 2; //$("#depthval").val();
+        var depthOfSearch = 1; //$("#depthval").val();
 
         var nodeList = [];
         if (causes !== 'ALL') {

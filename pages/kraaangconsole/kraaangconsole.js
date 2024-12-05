@@ -8,7 +8,9 @@ export default function kraaangconsole(props) {
     var rootURL = "diat_skeleton/diat.html/?causes=";
     var allFlag = "ALL";
     var defaultUrl = rootURL + allFlag;
-    var flagList = ""; 
+    
+
+    const [statefulFlagList, setStatefulFlagList] = useState("None.");
     const [promptInput, setPromptInput] = useState("");
     const [runningResult, setRunningResult] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -20,15 +22,20 @@ export default function kraaangconsole(props) {
         return parse(result);
     }
 
+
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
         if (runningResult.length === 0 & !oozing) {
             var thisArray = runningResult.slice();
             thisArray.push("<div class='question'>Hi. I'm N00b. <br/> </div>");
             
-            thisArray.push("<div class='question2'>My job is to help you find a Financial Advisor that can help you invest in ways that align with your passions. <br/></div>");      
+            setTimeout(thisArray.push("<div class='question2'>My job is to help you find a Financial Advisor that can help with impactful investing. <br/></div>"), 5000);
             
-            thisArray.push("<div class='question3'> Tell me what you care about. <br/> </div>");
+            thisArray.push("<div class='question3'> On the right, you'll see a cloud representing impactful causes, associated investment opportunities, and financial advisors with expertise in those interests. <br/> </div>");
+
+            thisArray.push("<div class='question2'> The cloud will change shape based upon our interactions.<br/> </div>");
+            
+            thisArray.push("<div class='question4'> What matters to you? <br/> </div>");
               
             
             setRunningResult(thisArray);
@@ -36,6 +43,7 @@ export default function kraaangconsole(props) {
     });
 
     async function makeCall(thisPrompt, route){
+        var flagList = statefulFlagList;
         try {
             setLoading(true);
             const response = await fetch("/api/"+route, {
@@ -52,15 +60,31 @@ export default function kraaangconsole(props) {
             }
 
             var thisArray = runningResult.slice();
-            thisArray.push("<div class='question'>" + thisPrompt + "</div>");
+            thisArray.push("<div class='interaction'>" + thisPrompt + "</div>");
             setRunningResult(thisArray);
+            
+            // Find the flags
             let result = data.result;
             const re = new RegExp("==(.*?)==");
             let subResult = result.match(re);
-            flagList = subResult[1];
-            flagList = flagList.replaceAll(' ', '');
+            if(subResult !=null) {
+                flagList = subResult[1];
+                flagList = flagList.replaceAll(", ", ',');
+                flagList = flagList.replaceAll(' ', '');
+
+            }
+            else{
+                flagList = "None.";
+            }
+            //  update diat
             setUrl(rootURL+flagList);
-            thisArray.push(data.result);
+            //////
+
+            // manipulate the result 
+            result = result.replace(re,'');
+            result = result.replaceAll('_', ' ');
+            ////
+            thisArray.push(result);
             setRunningResult(thisArray);
 
             setPromptInput("");
@@ -71,11 +95,21 @@ export default function kraaangconsole(props) {
             alert(error.message);
             setLoading(false);
         }
+
+        return flagList;
     }
     async function onSubmit(event) {
         event.preventDefault();
-        //setUrl(defaultUrl);     
-        await makeCall(promptInput, "generate");
+        //setUrl(defaultUrl);
+        var frontrunPrompt = "";     
+        if(statefulFlagList==="None."){
+            frontrunPrompt = "";
+        }
+        else{
+            frontrunPrompt = "My current indicated interests are: " + statefulFlagList + ". Add or remove values based upon this input: ";
+        }
+        var myNewFlags = await makeCall(frontrunPrompt + promptInput, "generate");
+        setStatefulFlagList(myNewFlags);
     }
 
     function resultBuilder() {
