@@ -169,19 +169,19 @@ function searchFromPanel(element) {
 function listSelectedConnectors() {
     selectedDataElements.nodes.forEach((element, index, array) => {
         if (element.group == 1) {
-            $("#tables").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "("+ element.depth +")" + "</button>");
+            $("#tables").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
         }
 
         if (element.group == 2) {
-            $("#svc").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id +  "("+ element.depth +")" +"</button>");
+            $("#svc").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
         }
 
         if (element.group == 3) {
-            $("#web").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "("+ element.depth +")" + "</button>");
+            $("#web").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
         }
 
         if (element.group == 4) {
-            $("#batch").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "("+ element.depth +")" + "</button>");
+            $("#batch").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
         }
 
     });
@@ -221,52 +221,67 @@ function rebuildSvg() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const causes = urlParams.get('causes')
-    let myArray = causes.split(',');
 
-    var depthOfSearch = $("#depthval").val();
+    if (causes !== 'ALL' || (sval !== '' && sval !== undefined)) {
+        let myArray = causes.split(',');
 
-    var nodeList = [];
+        var depthOfSearch = 2; //$("#depthval").val();
 
-    for(var i = 0; i < myArray.length; i++){
-        nodeList.push(myArray[i]);
-        console.log("cause is " + myArray[i])
+        var nodeList = [];
+        if (causes !== 'ALL') {
+            for (var i = 0; i < myArray.length; i++) {
+                nodeList.push(myArray[i]);
+                console.log("cause is " + myArray[i])
+            }
+        }
+
+        if(sval!==''){
+            nodeList.push(sval);
+        }
+
+        //
+        var count = 0;
+        newDataElements = traverseNode(dataelements, newDataElements, nodeList, count + 1);
+        count++;
+
+        for (var i = count; i < depthOfSearch; i++) {
+            newDataElements = traverseNode(dataelements, newDataElements, newDataElements.nodes, i + 1);
+        }
+
+
+
+        selectedDataElements = newDataElements;
+        setImage(selectedDataElements);
     }
+    else {
 
-    //nodeList.push(sval);
-    var count = 0;
-    newDataElements = traverseNode(dataelements, newDataElements, nodeList, count+1);
-    count++;
-
-    for(var i = count; i < depthOfSearch; i++){
-        newDataElements = traverseNode(dataelements, newDataElements, newDataElements.nodes, i+1);
+        setImage(dataelements);
     }
-    
+}
 
-
-    selectedDataElements = newDataElements;
+function setImage(selectedDataElements) {
     var svg = buildSvg(selectedDataElements);
     $("#container").html(svg);
     listSelectedConnectors();
-
 }
 
-function walkNodeList(nodeList, searchvar){
+function walkNodeList(nodeList, searchvar) {
     var found = false;
     nodeList.forEach((element, index, array) => {
-        if(element.id===searchvar){
+        if (element.id === searchvar) {
             found = true;
         }
 
-        if(element===searchvar){
+        if (element === searchvar) {
             found = true;
         }
     });
     return found;
 }
 
-function traverseNode(dataelements, newDataElements, nodeList, depth){
+function traverseNode(dataelements, newDataElements, nodeList, depth) {
     dataelements.links.forEach((element, index, array) => {
-        if (walkNodeList(nodeList,element.source) || walkNodeList(nodeList,element.target)) {
+        if (walkNodeList(nodeList, element.source) || walkNodeList(nodeList, element.target)) {
             dataelements.nodes.forEach((subElement, index2, array2) => {
                 if (subElement.id === element.target || subElement.id === element.source) {
                     if (!(checkNodes(newDataElements, subElement.id))) {
@@ -281,24 +296,24 @@ function traverseNode(dataelements, newDataElements, nodeList, depth){
     return newDataElements;
 }
 
-function exportRelationships(){
+function exportRelationships() {
     exportToCsv("myFile.csv", selectedDataElements.links);
 }
 
-function findDepthValue(id){
+function findDepthValue(id) {
     var depthVal = 0;
     selectedDataElements.nodes.forEach((element, index, array) => {
-        if(element.id === id){
+        if (element.id === id) {
             depthVal = element.depth;
         }
     });
     return depthVal;
 }
 
-function findSupporTeam(id){
+function findSupporTeam(id) {
     var team = '';
     selectedDataElements.nodes.forEach((element, index, array) => {
-        if(element.id === id){
+        if (element.id === id) {
             team = element.supportteam;
         }
     });
@@ -307,7 +322,7 @@ function findSupporTeam(id){
 
 function exportToCsv(filename, rows) {
     var processRow = function (row) {
-        var finalVal = "source: " + row.source + ", target: " + row.target + ", depth:" + findDepthValue(row.target) +", supportteam:"+findSupporTeam(row.target);
+        var finalVal = "source: " + row.source + ", target: " + row.target + ", depth:" + findDepthValue(row.target) + ", supportteam:" + findSupporTeam(row.target);
         return finalVal + '\n';
     };
 

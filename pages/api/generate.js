@@ -1,11 +1,4 @@
 import { Configuration, OpenAIApi } from "openai";
-import epicData from '../../prompts_data/epics_stories.json';
-import appData from '../../prompts_data/svc_app_bp.json';
-import usageData from '../../prompts_data/usage.json';
-import developerData from '../../prompts_data/developers.json';
-import pastWorkData from '../../prompts_data/past_story_data.json';
-import sprintData from '../../prompts_data/sprintresults.json';
-
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -61,19 +54,26 @@ function generatePrompt(prompt) {
   const capitalizedPrompt =
     prompt[0].toUpperCase() + prompt.slice(1).toLowerCase();
    
-    let prompt2 = ` 
-    Given that you are a representive of a large brokerage offering invesment options for millennials
-    that speak to causes and beliefs they might hold. There are two known causes Green_Energy (represented as green energy or Green Energy) and
-    Affordable_Housing represented as "affordable housing" or affordable housing"
+    let prompt2 = `Take on the persona of a personal digital assistant named Noob. Your job is take input from the user and choose one or more of the following areas of input and return what they might be interested in. 
+
+            Green_Energy,
+            Affordable_Housing,
+            Microfinance,
+            Regenerative_Agriculture,
+            Education,
+            Gender_Equality,
+            Healthcare,
+            Clean_Technology,
+            Social_Enterprises,
+            Animal_Wellness
+
 
     and given this prompt
+    ==Regenerative_Agriculture, Clean_Technology==
     ${capitalizedPrompt}
 
-    return a comma-separated string buttressed by == on both sides that represents a list of causes this user is talking about 
-    and ask the user if they are interested in pursuing investments about the other cause.
- 
-    
 
+    return a comma-separated string buttressed by == on both sides that represents a list of causes this user is talking about and ask the user if they are interested in pursuing investments about the other cause. If the prompt begins with a comma-separated string buttressed by == on both sides, include those causes in the response as well, adding or removing additional context from the prompt.
   `;
     console.log(prompt2);
     return prompt2;

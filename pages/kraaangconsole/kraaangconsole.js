@@ -5,12 +5,15 @@ import parse from "html-react-parser";
 
 
 export default function kraaangconsole(props) {
-    var defaultUrl = "diat_skeleton/diat.html/?causes=Green_Energy";
+    var rootURL = "diat_skeleton/diat.html/?causes=";
+    var allFlag = "ALL";
+    var defaultUrl = rootURL + allFlag;
+    var flagList = ""; 
     const [promptInput, setPromptInput] = useState("");
     const [runningResult, setRunningResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const [oozing, setOozing] = useState(false);
-    const [url, setUrl] = useState("diat_skeleton/diat.html/?causes=Green_Energy,Affordable_Housing");
+    const [url, setUrl] = useState(defaultUrl);
     
 
     function parseResult(result) {
@@ -21,7 +24,13 @@ export default function kraaangconsole(props) {
     useEffect(() => {
         if (runningResult.length === 0 & !oozing) {
             var thisArray = runningResult.slice();
-            thisArray.push("<div class='question'>Welcome to NOOB, the impactful advising tool of the future.</div>");
+            thisArray.push("<div class='question'>Hi. I'm N00b. <br/> </div>");
+            
+            thisArray.push("<div class='question2'>My job is to help you find a Financial Advisor that can help you invest in ways that align with your passions. <br/></div>");      
+            
+            thisArray.push("<div class='question3'> Tell me what you care about. <br/> </div>");
+              
+            
             setRunningResult(thisArray);
         }
     });
@@ -45,6 +54,12 @@ export default function kraaangconsole(props) {
             var thisArray = runningResult.slice();
             thisArray.push("<div class='question'>" + thisPrompt + "</div>");
             setRunningResult(thisArray);
+            let result = data.result;
+            const re = new RegExp("==(.*?)==");
+            let subResult = result.match(re);
+            flagList = subResult[1];
+            flagList = flagList.replaceAll(' ', '');
+            setUrl(rootURL+flagList);
             thisArray.push(data.result);
             setRunningResult(thisArray);
 
@@ -59,7 +74,7 @@ export default function kraaangconsole(props) {
     }
     async function onSubmit(event) {
         event.preventDefault();
-        setUrl(defaultUrl);     
+        //setUrl(defaultUrl);     
         await makeCall(promptInput, "generate");
     }
 
@@ -69,34 +84,6 @@ export default function kraaangconsole(props) {
         })
 
     }
-
-    async function showTeam(e){
-        e.preventDefault();        
-        await makeCall("show me the team with skillsets, don't include gender data", "teamOnly");
-    }
-
-    async function analyzeBacklog(e){
-        e.preventDefault();        
-        await makeCall("show all stories and bugs, don't include completed stories or bugs: story or bug | number | status | description", "backlogOnly");
-    }
-
-    async function instantRetro(e){
-        e.preventDefault();        
-        await makeCall(`
-        look at the last sprint and analyze the results, 
-        create a report on the data and speculate why some developers didn't complete their stories and why bugs were introduced.
-        look back at the sprint before and compare the results statistically.
-        `, "retro");
-    }
-
-    async function suggestNextSprint(e){
-        e.preventDefault();        
-        await makeCall(`for each developer, assign one or two stories or bugs with a status of Not Started and a time_estimate less than or equal to 32 hours. all stories and bugs in status Not Started should be assigned. include the story or bug number and the time_Estimate for the bug or story in the response.
-        `, "resourcing");
-    }
-
-
- 
 
     return (
         <div className={styles.holder}>
