@@ -67,13 +67,12 @@ function generatePrompt(prompt) {
             Social_Enterprises,
             Animal_Wellness.
 
-    You are being given the following prompt: 
+ 
     ${capitalizedPrompt}
      
-    
-
     Return a comma-separated list that represents a list of causes related to the prompt.
     The list that is created should have "==" before and after.
+    The list should only have distinct values.
    
     Also return, in paragraph form the following: 
     Explain why the selected causes from the list pertain to the prompt.

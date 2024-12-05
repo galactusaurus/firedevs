@@ -35,7 +35,7 @@ export default function kraaangconsole(props) {
 
             setTimeout(thisArray.push("<div class='question2'>My job is to find a Financial Advisor that can help with impactful investing. <br/></div>"), 5000);
 
-            thisArray.push("<div class='question3'> On the right, you'll see a cloud representing impactful causes, associated investment opportunities, and financial advisors with investmetn expertise in these areas. <br/> </div>");
+            thisArray.push("<div class='question3'> On the right, you'll see a cloud representing impactful causes, associated investment opportunities, and financial advisors with investment expertise in these areas. <br/> </div>");
 
             thisArray.push("<div class='question2'> The cloud will change shape based upon our interactions. You can chat with me via the box below, or select a cause from the list on the right. <br/> </div>");
 

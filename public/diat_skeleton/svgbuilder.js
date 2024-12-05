@@ -176,6 +176,7 @@ function searchFromPanel(element, modalShow) {
     $("#searchval").val(element);
     rebuildSvg();
     if(modalShow) showModalForFa(element);
+    listSelectedConnectors();
 }
 
 function listSelectedConnectors() {
@@ -274,7 +275,7 @@ function rebuildSvg() {
 function setImage(selectedDataElements) {
     var svg = buildSvg(selectedDataElements);
     $("#container").html(svg);
-    listSelectedConnectors();
+    //listSelectedConnectors();
 }
 
 function walkNodeList(nodeList, searchvar) {
