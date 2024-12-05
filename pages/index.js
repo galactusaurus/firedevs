@@ -11,8 +11,8 @@ export default function Home() {
 
     <div>
       <Head>
-        <title>K.R.A.A.A.N.G. - Your Robotic Agile Consultant</title>
-        <link rel="icon" href="/krang2.png" />
+        <title>NOOB - NewToWealth Official Opportunity Broker </title>
+        <link rel="icon" href="/baby.png" />
       </Head>
       
 
