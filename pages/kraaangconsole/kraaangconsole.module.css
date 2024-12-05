@@ -45,7 +45,7 @@
    
   .promptBox{
     float: left;
-    width: 85%;
+    width: 65%;
   }
   
   .promptBox
@@ -65,8 +65,8 @@
   
   .promptButton
   input{
-    color: #00FF00; /* Green text color for input */
-    border: 1px solid black; /* Green border for input */
+    color: darkslategrey; /* Green text color for input */
+    border: 1px solid darkslategray; /* Green border for input */
     padding: 10px;
     width: 98%;
     border-radius: 5px;
@@ -118,7 +118,7 @@
   }
   
   .holder{
-    width:40%;
+    width:30%;
     float:left;    
   }
   .commBox{
@@ -143,8 +143,8 @@
 
   .powerPanel{
     float: left;
-    width: 30%;
-    animation: fadeInAnimation1 ease 10s;
+    width: 60%;
+    animation: fadeInAnimation1 ease 30s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 

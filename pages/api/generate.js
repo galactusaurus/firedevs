@@ -54,7 +54,7 @@ function generatePrompt(prompt) {
   const capitalizedPrompt =
     prompt[0].toUpperCase() + prompt.slice(1).toLowerCase();
    
-    let prompt2 = `Take on the persona of a personal digital assistant named Noob. Your job is take input from the user and choose one or more of the following areas of input and return what they might be interested in. 
+    let prompt2 = `Do not introduce yourself. Take on the persona of a personal digital assistant named Noob. Your job is to take input from the user and choose one or more of the following areas of input and return what they might be interested in: 
 
             Green_Energy,
             Affordable_Housing,
@@ -65,15 +65,15 @@ function generatePrompt(prompt) {
             Healthcare,
             Clean_Technology,
             Social_Enterprises,
-            Animal_Wellness
+            Animal_Wellness.
 
-
-    and given this prompt
-    ==Regenerative_Agriculture, Clean_Technology==
+    You are being given the following prompt from the user: 
     ${capitalizedPrompt}
+    
+    return a comma-separated list that represents a list of causes this user is talking about and ask the user if they are interested in pursuing investments about the other cause.
 
-
-    return a comma-separated string buttressed by == on both sides that represents a list of causes this user is talking about and ask the user if they are interested in pursuing investments about the other cause. If the prompt begins with a comma-separated string buttressed by == on both sides, include those causes in the response as well, adding or removing additional context from the prompt.
+    The list that is created should have "==" before and after.
+   
   `;
     console.log(prompt2);
     return prompt2;
