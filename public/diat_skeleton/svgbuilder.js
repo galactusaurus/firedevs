@@ -172,20 +172,20 @@ document.addEventListener('DOMContentLoaded', function (e) {
     listSelectedConnectors();
 })
 
-function searchFromPanel(element) {
+function searchFromPanel(element, modalShow) {
     $("#searchval").val(element);
     rebuildSvg();
-    showModalForFa(element);
+    if(modalShow) showModalForFa(element);
 }
 
 function listSelectedConnectors() {
     selectedDataElements.nodes.forEach((element, index, array) => {
         if (element.group == 1) {
-            $("#tables").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
+            $("#tables").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "',false)>" + element.id + "(" + element.depth + ")" + "</button>");
         }
 
         if (element.group == 2) {
-            $("#svc").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
+            $("#svc").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "',true)>" + element.id + "(" + element.depth + ")" + "</button>");
         }
 
         if (element.group == 3) {
