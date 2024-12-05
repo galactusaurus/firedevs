@@ -1,0 +1,136 @@
+
+@font-face {
+    font-family: punk;
+    src: url(punk-kid/punk-kid/punkkid.ttf);
+  }
+
+.valname{
+    border-width: 0px;
+    font-size: 18px;
+}
+
+.depthsearch{
+    border-width: 0px;
+    font-size: 18px;
+    width: 20px;
+}
+
+button{
+    height:100%;
+}
+
+svg {
+    border: 1px solid #ccc;
+    border-width: 0px;
+    width:100%;
+    height:100%;
+}
+
+body{
+    background: black; 
+    margin:0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.container{
+    width: 90%;
+    height: 100%;
+    float:left;
+}
+
+.infoholder{
+    width: 10%;
+    height:100%;
+    float:left;
+    background: black;
+}
+
+.infolabel{
+    font-family: punk;
+    font-size: 20px;
+    text-align: center;
+    width:100%;
+    color:#333399;
+}
+
+.itemlist {
+    width: 100%;
+    max-height: 18%;
+    min-height: 18%;
+    overflow: auto;
+    float: left;
+    border-radius: 4%;
+    border-width: 0px;
+    border-style: solid;
+    margin: 5px;
+    color: whitesmoke;   
+}
+
+.header{
+    visibility: hidden;
+    color:whitesmoke;
+    background: #333399;
+    font-family: punk;
+    font-size: 30px;
+    width:100%;
+    padding: 5px;
+}
+.searcharea{
+    visibility: hidden; ;
+    width:20%;
+    float:left;
+}
+
+.searchbar{
+    visibility: collapse;
+    width:100%;
+    height:3%;
+    background: white;
+}
+.searchbuttonarea{
+    padding-left: 5px;
+    float: left;
+}
+
+.panelButton{
+    height:5%;
+    width: 100%;
+    float: left;
+    border: none;
+    background: transparent;
+    color:white;
+}
+
+.legend{
+    position:absolute;
+    left:50px;
+    top:200px;
+    width:130px;
+    height:100px;
+    background-color: black;
+    border-color: white;
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2%;
+    padding: 2px;
+
+}
+
+.dot-table{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(78, 121, 167);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-svc{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(242, 142, 44);;
+    border-radius: 50%;
+    display: inline-block;
+}
+

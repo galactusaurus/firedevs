@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <title>Datapoint Impact Analysis Tool</title>
+</head>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="dataelements_2024.js"></script>
+<script src="svgbuilder.js"></script>
+
+<link rel="stylesheet" href="styles.css">
+
+<body>
+ 
+    <div class="searchbar">
+        
+        <div class="searcharea">node:<input class="valname" type="text" id="searchval" name="lname" placeholder="node name pleez..."> depth: <input class="depthsearch" type="text" id="depthval" name="lname" value="1"></div>
+        <div class="searchbuttonarea"><button id="rebuild" onclick="rebuildSvg()">Search</button></div>
+        <div class="searchbuttonarea"><button id="reset" onclick="resetSvg()">Reset</button></div>
+        <div class="searchbuttonarea"><button id="export" onclick="exportRelationships()">Export</button></div>
+    </div>
+    <div class="container" id="container"></div>
+    <div class="infoholder">
+        <div class="infolabel">Causes</div>
+        <div id="tables" class="itemlist"></div>
+        <div class="infolabel">Advisors</div>
+        <div id="svc" class="itemlist"></div>
+        <!--<div class="infolabel">Frontends</div>
+        <div id="web" class="itemlist"></div>
+        <div class="infolabel">Batch Processes</div>
+        <div id="batch" class="itemlist"></div>-->
+    </div>
+
+    
+</body>
+
+</html>

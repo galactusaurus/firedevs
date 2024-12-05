@@ -5,12 +5,12 @@ import parse from "html-react-parser";
 
 
 export default function kraaangconsole(props) {
-    var defaultUrl = "diat/diat.html/?causes=Green_Energy";
+    var defaultUrl = "diat_skeleton/diat.html/?causes=Green_Energy";
     const [promptInput, setPromptInput] = useState("");
     const [runningResult, setRunningResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const [oozing, setOozing] = useState(false);
-    const [url, setUrl] = useState("diat/diat.html/?causes=Green_Energy,Affordable_Housing");
+    const [url, setUrl] = useState("diat_skeleton/diat.html/?causes=Green_Energy,Affordable_Housing");
     
 
     function parseResult(result) {
