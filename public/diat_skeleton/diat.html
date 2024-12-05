@@ -21,6 +21,15 @@
         <div class="searchbuttonarea"><button id="reset" onclick="resetSvg()">Reset</button></div>
         <div class="searchbuttonarea"><button id="export" onclick="exportRelationships()">Export</button></div>
     </div>
+    <div id="legend" class="itemlist">
+        <ul style="list-style-type:none">
+            <li style="height:30px"><svg style="height:25px;width:20px"><circle r="5" fill="#f28e2c" cx="10" cy="10"></circle></svg> Advisor</li>
+            <li style="height:30px"><svg style="height:25px;width:20px"><circle r="5" fill="#4e79a7" cx="10" cy="10"></circle></svg> Cause</li>
+            <li style="height:30px"><svg style="height:25px;width:20px"><circle r="5" fill="#e15759" cx="10" cy="10"></circle></svg> Investment Opportunity</li>
+        </ul>
+
+
+    </div>
     <div class="container" id="container"></div>
     <div class="infoholder">
         <div class="infolabel">Causes</div>
@@ -31,8 +40,17 @@
         <div id="web" class="itemlist"></div>
         <div class="infolabel">Batch Processes</div>
         <div id="batch" class="itemlist"></div>-->
+
     </div>
 
+
+    <dialog id="faModal" class="modal">
+        <p>Name: <span id="faModalName"></span></p>
+        <p><span id="faModalPicture"><img id="imgSrc" width="200px" height="200px" src=""></img></span></p>
+        <p>Email:  <a id="faModalEmail"></a></p>
+
+        <button id="close-button" onclick="$('#faModal').hide();">Close</button>
+    </dialog>
     
 </body>
 

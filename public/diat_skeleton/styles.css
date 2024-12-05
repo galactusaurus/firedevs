@@ -134,3 +134,12 @@ body{
     display: inline-block;
 }
 
+dialog {
+  margin: 10% auto;
+  width: 80%;
+  max-width: 350px;
+  background-color: #fff;
+  padding: 34px;
+  border: 0;
+  border-radius: 5px;
+}
