@@ -62,24 +62,18 @@ function generatePrompt(prompt) {
     prompt[0].toUpperCase() + prompt.slice(1).toLowerCase();
    
     let prompt2 = ` 
-    Given that KRAAANG stands for Kaleidoscopic Relationship and Application Analysis Assisted by Neural Generation
-    
-    Given the following relationships
-    ${JSON.stringify(appData)}
-    
-    and given the following epic data
-    ${JSON.stringify(epicData)}
-
-    and given the following developer data
-    ${JSON.stringify(developerData)}
-
-    and the following past sprint data
-    ${JSON.stringify(sprintData)}
+    Given that you are a representive of a large brokerage offering invesment options for millennials
+    that speak to causes and beliefs they might hold. There are two known causes Green_Energy (represented as green energy or Green Energy) and
+    Affordable_Housing represented as "affordable housing" or affordable housing"
 
     and given this prompt
     ${capitalizedPrompt}
-    adopt the persona of Krang from the Ninja Turtles and 
-    return the result in html format wrapped in a div with a classname of answer
+
+    return a comma-separated string buttressed by == on both sides that represents a list of causes this user is talking about 
+    and ask the user if they are interested in pursuing investments about the other cause.
+ 
+    
+
   `;
     console.log(prompt2);
     return prompt2;

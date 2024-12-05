@@ -14,14 +14,10 @@ export default function Home() {
         <title>K.R.A.A.A.N.G. - Your Robotic Agile Consultant</title>
         <link rel="icon" href="/krang2.png" />
       </Head>
-      <div>
-        <img className={styles.krangimg} src="/krang2.png" />
-      </div>
+      
 
       <main className={styles.main}>
-        <div className={styles.header}>
-          <h1>K. R. A. A. A. N. G. - Your Robotic Agile Consultant</h1>
-        </div>
+        
         <div className={styles.krangCage}>
           {kraaangconsole()}
         </div>

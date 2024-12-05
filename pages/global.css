@@ -1,11 +1,14 @@
 
 body {
-    background-color: #333; /* Dark background color */
+    background-color: black; /* Dark background color */
     color: #00FF00; /* Green text color */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
   }
+
+
 
   .answer{
     color:white;
@@ -13,7 +16,7 @@ body {
   }
 
   .question{
-    color: pink;
+    color: red;
     width:80%;
   }
 

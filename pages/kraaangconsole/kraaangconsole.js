@@ -5,10 +5,12 @@ import parse from "html-react-parser";
 
 
 export default function kraaangconsole(props) {
+    var defaultUrl = "diat/diat.html/?causes=Green_Energy";
     const [promptInput, setPromptInput] = useState("");
     const [runningResult, setRunningResult] = useState([]);
     const [loading, setLoading] = useState(false);
     const [oozing, setOozing] = useState(false);
+    const [url, setUrl] = useState("diat/diat.html/?causes=Green_Energy,Affordable_Housing");
     
 
     function parseResult(result) {
@@ -19,7 +21,7 @@ export default function kraaangconsole(props) {
     useEffect(() => {
         if (runningResult.length === 0 & !oozing) {
             var thisArray = runningResult.slice();
-            thisArray.push("<div class='question'>******** I am KRAAANG, your agile advisor, coach, consigliere, and analyst. Ask me anything or use my power panel. **************</div>");
+            thisArray.push("<div class='question'>Welcome to NOOB, the impactful advising tool of the future.</div>");
             setRunningResult(thisArray);
         }
     });
@@ -57,6 +59,7 @@ export default function kraaangconsole(props) {
     }
     async function onSubmit(event) {
         event.preventDefault();
+        setUrl(defaultUrl);     
         await makeCall(promptInput, "generate");
     }
 
@@ -92,40 +95,13 @@ export default function kraaangconsole(props) {
         `, "resourcing");
     }
 
-    async function analyzeStories(e){
-        e.preventDefault();
-        await makeCall(`analyze the stories in "not started" status, see if any need more detail`, "generate");
-    }
 
-    async function clearResults(){
-        setRunningResult([]);  
-        setOozing(true);
-        setTimeout(function(){  
-            
-            setOozing(false);        
-        }, 2500);
-        
-    }
+ 
 
     return (
         <div className={styles.holder}>
             <div className={styles.commBox}>
-                <div className={styles.inputBox}>
-                    <form onSubmit={onSubmit}>
-                        <div className={styles.promptBox}>
-                            <input
-                                type="text"
-                                name="prompt"
-                                placeholder="query kraang"
-                                value={promptInput}
-                                onChange={(e) => setPromptInput(e.target.value)}
-                            />
-                        </div>
-                        <div className={styles.promptButton}>
-                            <input type="submit" value="Generate" />
-                        </div>
-                    </form>
-                </div>
+                
 
                 <div className={styles.krangConsole}>
                     <div className={styles.result}>{resultBuilder()}</div>
@@ -141,30 +117,29 @@ export default function kraaangconsole(props) {
                      (<div></div>)   
                     }
                 </div>
-            </div>
-            <div className={styles.powerPanel}>
-                <div className={styles.panelHeader}>POWER PANEL</div>
-                <div className={styles.panelButtonHolder}>
-                    <button onClick={showTeam}>
-                        Team
-                    </button>
-                    <button onClick={analyzeBacklog}>
-                        Backlog
-                    </button>
-                    <button onClick={instantRetro}>
-                        Instant Retro
-                    </button>
-                    <button onClick={suggestNextSprint}>
-                        Plan Next Sprint
-                    </button>
-                    <button onClick={analyzeStories}>
-                        Analyze Backlog
-                    </button>
-                    
+
+                <div className={styles.inputBox}>
+                    <form onSubmit={onSubmit}>
+                        <div className={styles.promptBox}>
+                            <input
+                                type="text"
+                                name="prompt"
+                                placeholder="query kraang"
+                                value={promptInput}
+                                onChange={(e) => setPromptInput(e.target.value)}
+                            />
+                        </div>
+                        <div className={styles.promptButton}>
+                            <input type="submit" value="Go" />
+                        </div>
+                    </form>
                 </div>
             </div>
+            <div className={styles.powerPanel}>
+                
+                <iframe width="1000px" height="800px" style={{border:"none"}} src={url} title="description"></iframe>
+            </div>
 
-            <button className={styles.clearButton} onClick={clearResults}>Clear</button>
         </div>
     );
 }
