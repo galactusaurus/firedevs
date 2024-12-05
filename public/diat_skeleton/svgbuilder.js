@@ -362,8 +362,6 @@ function exportToCsv(filename, rows) {
 }
 
 function showModalForFa(faName) {
-
-
     var modal = $("#faModal");
     console.log(modal);
     $("#faModalName").text(faName);
@@ -378,11 +376,12 @@ function showModalForFa(faName) {
     console.log(distinctCauses);
     var distinctCausesString = distinctCauses.join(", ").replaceAll("_"," ");
      $("#faCoreCauses").text(distinctCausesString);
+
+     $("#faName").text(faName);
+     $("#faCauses").text(distinctCausesString);
     modal.show();
-
-
-
 }
+
 function getDistinctValues(array, attribute) {
     const uniqueValues = new Set();
 

@@ -168,3 +168,20 @@ background: slategrey
 #faModalName{
     font-weight: bold;
 }
+
+.spanningFaDisplay{
+    width: 100%;
+    background-image: url("../chyron.png");
+    top: 720px;
+    position: absolute;
+    min-height: 200px;
+}
+
+.spanPage{
+    width:100%;
+}
+
+.faNameHolder{
+    width: 100%;
+    color: goldenrod;
+}

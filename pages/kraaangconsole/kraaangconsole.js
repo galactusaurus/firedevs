@@ -35,9 +35,9 @@ export default function kraaangconsole(props) {
 
             setTimeout(thisArray.push("<div class='question2'>My job is to find a Financial Advisor that can help with impactful investing. <br/></div>"), 5000);
 
-            thisArray.push("<div class='question3'> On the right, you'll see a cloud representing impactful causes, associated investment opportunities, and financial advisors with expertise in those interests. <br/> </div>");
+            thisArray.push("<div class='question3'> On the right, you'll see a cloud representing impactful causes, associated investment opportunities, and financial advisors with investmetn expertise in these areas. <br/> </div>");
 
-            thisArray.push("<div class='question2'> The cloud will change shape based upon our interactions.<br/> </div>");
+            thisArray.push("<div class='question2'> The cloud will change shape based upon our interactions. You can chat with me via the box below, or select a cause from the list on the right. <br/> </div>");
 
             thisArray.push("<div class='question4'> What matters to you? <br/> </div>");
 
@@ -46,7 +46,7 @@ export default function kraaangconsole(props) {
         }
     });
 
-    async function makeCall(thisPrompt, route) {
+    async function makeCall(thisPrompt, route, originalPrompt) {
         var flagList = statefulFlagList;
         try {
             setLoading(true);
@@ -64,7 +64,7 @@ export default function kraaangconsole(props) {
             }
 
             var thisArray = runningResult.slice();
-            thisArray.push("<div class='interaction'>" + thisPrompt + "</div>");
+            thisArray.push("<div class='interaction'>" + originalPrompt + "</div>");
             setRunningResult(thisArray);
 
             // Find the flags
@@ -112,7 +112,7 @@ export default function kraaangconsole(props) {
         else {
             frontrunPrompt = "My current indicated interests are: " + statefulFlagList + ". Add or remove values based upon this input: ";
         }
-        var myNewFlags = await makeCall(frontrunPrompt + promptInput, "generate");
+        var myNewFlags = await makeCall(frontrunPrompt + promptInput, "generate", promptInput);
         setStatefulFlagList(myNewFlags);
     }
 

@@ -31,6 +31,8 @@ body {
     color: #e15759;
     width:80%;
 
+    margin-bottom:5px;
+
     animation: fadeInAnimation1 ease 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -41,6 +43,8 @@ body {
     color: darkslategray;
     width:80%;
 
+    margin-bottom:5px;
+
     animation: fadeInAnimation1 ease 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -50,6 +54,7 @@ body {
   .question3{
     color: #e15759;
     width:80%;
+    margin-bottom:5px;
 
     animation: fadeInAnimation1 ease 6s;
     animation-iteration-count: 1;

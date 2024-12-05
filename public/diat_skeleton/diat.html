@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </meta>
     <title>Datapoint Impact Analysis Tool</title>
 </head>
 
@@ -13,46 +14,61 @@
 <link rel="stylesheet" href="styles.css">
 
 <body>
- 
-    <div class="searchbar">
-        
-        <div class="searcharea">node:<input class="valname" type="text" id="searchval" name="lname" placeholder="node name pleez..."> depth: <input class="depthsearch" type="text" id="depthval" name="lname" value="1"></div>
-        <div class="searchbuttonarea"><button id="rebuild" onclick="rebuildSvg()">Search</button></div>
-        <div class="searchbuttonarea"><button id="reset" onclick="resetSvg()">Reset</button></div>
-        <div class="searchbuttonarea"><button id="export" onclick="exportRelationships()">Export</button></div>
-    </div>
-    <div id="legend" class="itemlist">
-        <ul style="font-family:Arial, Helvetica, sans-serif;list-style-type:none">
-            <li style="height:30px"><svg style="height:25px;width:20px"><circle r="5" fill="#f28e2c" cx="10" cy="10"></circle></svg> Advisor</li>
-            <li style="height:30px"><svg style="height:25px;width:20px"><circle r="5" fill="#4e79a7" cx="10" cy="10"></circle></svg> Cause</li>
-            <li style="height:30px"><svg style="height:25px;width:20px"><circle r="5" fill="#e15759" cx="10" cy="10"></circle></svg> Investment Opportunity</li>
-        </ul>
+    <div class="spanPage">
+        <div class="searchbar">
+
+            <div class="searcharea">node:<input class="valname" type="text" id="searchval" name="lname"
+                    placeholder="node name pleez..."> depth: <input class="depthsearch" type="text" id="depthval"
+                    name="lname" value="1"></div>
+            <div class="searchbuttonarea"><button id="rebuild" onclick="rebuildSvg()">Search</button></div>
+            <div class="searchbuttonarea"><button id="reset" onclick="resetSvg()">Reset</button></div>
+            <div class="searchbuttonarea"><button id="export" onclick="exportRelationships()">Export</button></div>
+        </div>
+        <div id="legend" class="itemlist">
+            <ul style="font-family:Arial, Helvetica, sans-serif;list-style-type:none">
+                <li style="height:30px"><svg style="height:25px;width:20px">
+                        <circle r="5" fill="#f28e2c" cx="10" cy="10"></circle>
+                    </svg> Advisor</li>
+                <li style="height:30px"><svg style="height:25px;width:20px">
+                        <circle r="5" fill="#4e79a7" cx="10" cy="10"></circle>
+                    </svg> Cause</li>
+                <li style="height:30px"><svg style="height:25px;width:20px">
+                        <circle r="5" fill="#e15759" cx="10" cy="10"></circle>
+                    </svg> Investment Opportunity</li>
+            </ul>
 
 
-    </div>
-    <div class="container" id="container"></div>
-    <div class="infoholder">
-        <div class="infolabel">Causes</div>
-        <div id="tables" class="itemlist"></div>
-        <div class="infolabel">Advisors</div>
-        <div id="svc" class="itemlist"></div>
-        <!--<div class="infolabel">Frontends</div>
+        </div>
+        <div class="container" id="container"></div>
+        <div class="infoholder">
+            <div class="infolabel">Causes</div>
+            <div id="tables" class="itemlist"></div>
+            <div class="infolabel">Advisors</div>
+            <div id="svc" class="itemlist"></div>
+            <!--<div class="infolabel">Frontends</div>
         <div id="web" class="itemlist"></div>
         <div class="infolabel">Batch Processes</div>
         <div id="batch" class="itemlist"></div>-->
 
+        </div>
+
+
+        <dialog id="faModal" class="modal">
+            <p class="infolabel"><span id="faModalName"></span></p>
+            <p class="infolabel"><span id="faModalPicture"><img id="imgSrc" width="200px" height="200px"
+                        src=""></img></span></p>
+            <p class="infolabel">Core Causes<br /> <span id="faCoreCauses" style="color:black"></span></p>
+            <p><a id="faModalEmail"></a></p>
+
+            <button id="close-button" onclick="$('#faModal').hide();">Close</button>
+        </dialog>
     </div>
+    <!--<div class="spanningFaDisplay">
+        <div class="faNameHolder"><div id="faName"></div></div>
+        <p class="chyronLabel">Core Causes: <span id="faCauses" style="color:black"></span></p>
+    </div>-->
 
 
-    <dialog id="faModal" class="modal">
-        <p class="infolabel"><span id="faModalName"></span></p>
-        <p class="infolabel"><span id="faModalPicture"><img id="imgSrc" width="200px" height="200px" src=""></img></span></p>
-        <p class="infolabel">Core Causes<br /> <span id="faCoreCauses" style="color:black"></span></p>
-        <p><a id="faModalEmail"></a></p>
-
-        <button id="close-button" onclick="$('#faModal').hide();">Close</button>
-    </dialog>
-    
 </body>
 
 </html>

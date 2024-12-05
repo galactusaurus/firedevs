@@ -77,8 +77,6 @@ function generatePrompt(prompt) {
    
     Also return, in paragraph form the following: 
     Explain why the selected causes from the list pertain to the prompt.
-    Ask the if I am interested in pursuing investments about the other cause.
-
   `;
     console.log(prompt2);
     return prompt2;
