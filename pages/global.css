@@ -60,7 +60,7 @@ body {
     color: goldenrod;
     width:80%;
 
-    animation: fadeInAnimation1 ease 20s;
+    animation: fadeInAnimation1 ease 12s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     padding-top: 20px;

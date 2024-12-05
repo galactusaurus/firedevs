@@ -18,6 +18,10 @@ export default function kraaangconsole(props) {
     const [url, setUrl] = useState(defaultUrl);
 
 
+    function resetAll() {
+        setStatefulFlagList("None.");
+        setUrl(defaultUrl);                
+    }
     function parseResult(result) {
         return parse(result);
     }
@@ -29,7 +33,7 @@ export default function kraaangconsole(props) {
             var thisArray = runningResult.slice();
             thisArray.push("<div class='question'>Hi. I'm N00b. <br/> </div>");
 
-            setTimeout(thisArray.push("<div class='question2'>My job is to help you find a Financial Advisor that can help with impactful investing. <br/></div>"), 5000);
+            setTimeout(thisArray.push("<div class='question2'>My job is to find a Financial Advisor that can help with impactful investing. <br/></div>"), 5000);
 
             thisArray.push("<div class='question3'> On the right, you'll see a cloud representing impactful causes, associated investment opportunities, and financial advisors with expertise in those interests. <br/> </div>");
 
