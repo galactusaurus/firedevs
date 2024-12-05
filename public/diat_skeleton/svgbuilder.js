@@ -370,10 +370,26 @@ function showModalForFa(faName) {
     $('#imgSrc').attr("src","../"+faName+".png");
     $("#faModalEmail").attr("href","mailto:"+faName+"@edwardjones.com");
     $("#faModalEmail").text(faName+"@edwardjones.com");
+
+    console.log(giveElements());
+    var faLinkedCauses = giveElements().links.filter(link => link.target == faName);
+    console.log(faLinkedCauses);
+    const distinctCauses = getDistinctValues(faLinkedCauses,'source');
+    console.log(distinctCauses);
+    var distinctCausesString = distinctCauses.join(", ").replaceAll("_"," ");
+     $("#faCoreCauses").text(distinctCausesString);
     modal.show();
 
 
 
 }
+function getDistinctValues(array, attribute) {
+    const uniqueValues = new Set();
 
+    array.forEach(item => {
+        uniqueValues.add(item[attribute]);
+    });
+
+    return [...uniqueValues];
+}
 
