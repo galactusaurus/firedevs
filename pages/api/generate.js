@@ -54,7 +54,7 @@ function generatePrompt(prompt) {
   const capitalizedPrompt =
     prompt[0].toUpperCase() + prompt.slice(1).toLowerCase();
    
-    let prompt2 = `Do not introduce yourself. Take on the persona of a personal digital assistant named Noob. Your job is to take input from the user and choose one or more of the following areas of input and return what they might be interested in: 
+    let prompt2 = `Do not introduce yourself. Your job is to take input and choose one or more of the following areas of input and return what they might be interested in: 
 
             Green_Energy,
             Affordable_Housing,
@@ -67,13 +67,18 @@ function generatePrompt(prompt) {
             Social_Enterprises,
             Animal_Wellness.
 
-    You are being given the following prompt from the user: 
+    You are being given the following prompt: 
     ${capitalizedPrompt}
+     
     
-    return a comma-separated list that represents a list of causes this user is talking about and ask the user if they are interested in pursuing investments about the other cause.
 
+    Return a comma-separated list that represents a list of causes related to the prompt.
     The list that is created should have "==" before and after.
    
+    Also return, in paragraph form the following: 
+    Explain why the selected causes from the list pertain to the prompt.
+    Ask the if I am interested in pursuing investments about the other cause.
+
   `;
     console.log(prompt2);
     return prompt2;
