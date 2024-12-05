@@ -181,19 +181,19 @@ function searchFromPanel(element, modalShow) {
 function listSelectedConnectors() {
     selectedDataElements.nodes.forEach((element, index, array) => {
         if (element.group == 1) {
-            $("#tables").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "',false)>" + element.id + "(" + element.depth + ")" + "</button>");
+            $("#tables").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id  + "',false)>" + element.id.replace('_',' ')  + "</button>");
         }
 
         if (element.group == 2) {
-            $("#svc").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "',true)>" + element.id + "(" + element.depth + ")" + "</button>");
+            $("#svc").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "',true)>" + element.id  + "</button>");
         }
 
         if (element.group == 3) {
-            $("#web").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
+            $("#web").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id  + "</button>");
         }
 
         if (element.group == 4) {
-            $("#batch").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id + "(" + element.depth + ")" + "</button>");
+            $("#batch").append("<button class='panelbutton' onclick=searchFromPanel('" + element.id + "')>" + element.id  + "</button>");
         }
 
     });
