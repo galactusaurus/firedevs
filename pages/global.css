@@ -16,7 +16,7 @@ body {
   }
 
   .interaction{
-    color: darkorchid;
+    color: #4e79a7;
     width:80%;
 
     animation: fadeInAnimation1 ease 2s;
@@ -28,7 +28,7 @@ body {
   }
 
   .question{
-    color: red;
+    color: #e15759;
     width:80%;
 
     animation: fadeInAnimation1 ease 2s;
@@ -48,7 +48,7 @@ body {
 
   
   .question3{
-    color: red;
+    color: #e15759;
     width:80%;
 
     animation: fadeInAnimation1 ease 6s;
